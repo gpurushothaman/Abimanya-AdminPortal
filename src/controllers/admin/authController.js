@@ -16,10 +16,10 @@ exports.login = async (req, res) => {
     });
   }
 
-  // const hashedPassword = await bcrypt.hash(
-  //   "123456",
-  //   10
-  // );
+  const hashedPassword = await bcrypt.hash(
+    "123456",
+    10
+  );
 
   console.log(hashedPassword)
   const isMatch = await bcrypt.compare(

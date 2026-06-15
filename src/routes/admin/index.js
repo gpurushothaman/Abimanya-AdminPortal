@@ -3,10 +3,8 @@ const express = require("express");
 const router = express.Router();
 
 router.use(
-    "/users",
-    require("./userRoutes")
+    "/door-location",
+    require("./doorLocationRoutes")
 );
-
-router.use("/auth", require("./authRoutes"));
 
 module.exports = router;

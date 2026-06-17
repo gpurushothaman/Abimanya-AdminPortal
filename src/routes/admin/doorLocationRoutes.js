@@ -1,13 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const {
-  saveDoorLocation,
-  getAllDoorLocations,
-  getDoorLocationById,
-  updateDoorLocation,
-  deleteDoorLocation,
-} = require("../../controllers/admin/doorLocationController");
+const {saveDoorLocation,getAllDoorLocations,getDoorLocationById,updateDoorLocation,deleteDoorLocation,} = require("../../controllers/admin/doorLocationController");
 
 router.post("/", saveDoorLocation);
 router.get("/", getAllDoorLocations);

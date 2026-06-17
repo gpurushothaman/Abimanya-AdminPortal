@@ -16,12 +16,12 @@ const adminRoutes = require("./routes/admin");
 
 const express = require("express");
 const cors = require("cors");
-
 const app = express();
-
 app.use(cors());
-
 app.use(express.json());
+
+
+
 
 //Admin panel - auth
 app.use("/api/admin/auth", authRoutes);

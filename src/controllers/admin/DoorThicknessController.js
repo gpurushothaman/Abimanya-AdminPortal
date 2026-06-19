@@ -1,13 +1,13 @@
-const WallThickness = require("../../models/admin/WallThickness");
+const DoorThickness = require("../../models/admin/DoorThickness");
 
-exports.createWallThickness = async (req, res) => {
+exports.createDoorThickness = async (req, res) => {
   try {
-    const wallThickness = await WallThickness.create(req.body);
+    const doorThickness = await DoorThickness.create(req.body);
 
     res.status(201).json({
       success: true,
-      message: "Wall Thickness Created",
-      data: wallThickness,
+      message: "Door Thickness Created",
+      data: doorThickness,
     });
   } catch (error) {
     res.status(500).json({
@@ -17,14 +17,14 @@ exports.createWallThickness = async (req, res) => {
   }
 };
 
-exports.getAllWallThickness = async (req, res) => {
+exports.getAllDoorThickness = async (req, res) => {
   try {
-    const wallThickness = await WallThickness.find();
+    const doorThickness = await DoorThickness.find();
 
     res.status(200).json({
       success: true,
-      count: wallThickness.length,
-      data: wallThickness,
+      count: doorThickness.length,
+      data: doorThickness,
     });
   } catch (error) {
     res.status(500).json({
@@ -34,22 +34,22 @@ exports.getAllWallThickness = async (req, res) => {
   }
 };
 
-exports.getWallThicknessById = async (req, res) => {
+exports.getDoorThicknessById = async (req, res) => {
   try {
-    const wallThickness = await WallThickness.findById(
+    const doorThickness = await DoorThickness.findById(
       req.params.id
     );
 
-    if (!wallThickness) {
+    if (!doorThickness) {
       return res.status(404).json({
         success: false,
-        message: "Wall Thickness not found",
+        message: "Door Thickness not found",
       });
     }
 
     res.status(200).json({
       success: true,
-      data: wallThickness,
+      data: doorThickness,
     });
   } catch (error) {
     res.status(500).json({
@@ -59,10 +59,10 @@ exports.getWallThicknessById = async (req, res) => {
   }
 };
 
-exports.updateWallThickness = async (req, res) => {
+exports.updateDoorThickness = async (req, res) => {
   try {
-    const updatedWallThickness =
-      await WallThickness.findByIdAndUpdate(
+    const updatedDoorThickness =
+      await DoorThickness.findByIdAndUpdate(
         req.params.id,
         req.body,
         {
@@ -71,17 +71,17 @@ exports.updateWallThickness = async (req, res) => {
         }
       );
 
-    if (!updatedWallThickness) {
+    if (!updatedDoorThickness) {
       return res.status(404).json({
         success: false,
-        message: "Wall Thickness not found",
+        message: "Door Thickness not found",
       });
     }
 
     res.status(200).json({
       success: true,
-      message: "Wall Thickness Updated",
-      data: updatedWallThickness,
+      message: "Door Thickness Updated",
+      data: updatedDoorThickness,
     });
   } catch (error) {
     res.status(500).json({
@@ -91,23 +91,23 @@ exports.updateWallThickness = async (req, res) => {
   }
 };
 
-exports.deleteWallThickness = async (req, res) => {
+exports.deleteDoorThickness = async (req, res) => {
   try {
-    const deletedWallThickness =
-      await WallThickness.findByIdAndDelete(
+    const deletedDoorThickness =
+      await DoorThickness.findByIdAndDelete(
         req.params.id
       );
 
-    if (!deletedWallThickness) {
+    if (!deletedDoorThickness) {
       return res.status(404).json({
         success: false,
-        message: "Wall Thickness not found",
+        message: "Door Thickness not found",
       });
     }
 
     res.status(200).json({
       success: true,
-      message: "Wall Thickness Deleted",
+      message: "Door Thickness Deleted",
     });
   } catch (error) {
     res.status(500).json({

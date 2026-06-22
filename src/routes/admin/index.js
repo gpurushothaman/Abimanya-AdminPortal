@@ -9,6 +9,7 @@ router.use("/dimension",require("./DimensionRoutes"));
 router.use("/door-orientation",require("./doorOrientationRoutes"));
 router.use("/door-jamb-location",require("./doorJambLocationRoutes"));
 router.use("/door-frame",require("./doorFrameRoutes"));
+router.use("/door-threshold",require("./doorThresholdRoutes"));
 
 
 module.exports = router;

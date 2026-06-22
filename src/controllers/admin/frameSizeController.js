@@ -45,7 +45,7 @@ exports.updateFrameSize = async (
       await FrameSize.findByIdAndUpdate(
         req.params.id,
         req.body,
-        { new: true }
+        {returnDocument: "after" }
       );
 
     res.status(200).json({

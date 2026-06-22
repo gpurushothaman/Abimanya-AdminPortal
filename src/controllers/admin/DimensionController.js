@@ -5,7 +5,7 @@ const updateDimension = async (req, res) => {
     const { id } = req.params;
 
     const updatedDimension = await Dimension.findByIdAndUpdate(id, req.body, {
-      new: true,
+      returnDocument: "after",
       runValidators: true,
     });
 

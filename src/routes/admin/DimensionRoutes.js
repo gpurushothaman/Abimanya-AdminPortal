@@ -4,7 +4,7 @@ const router = express.Router();
 const {
   updateDimension,
   getAllDimension
-} = require("../../controllers/admin/DimensionController");
+} = require("../../controllers/admin/dimensionController");
 
 router.put("/:id", updateDimension);
 router.get("/", getAllDimension);

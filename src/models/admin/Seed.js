@@ -49,10 +49,12 @@ async function seedDoorOrientations() {
       {
         DoorOrientationname: "LHS",
         DoorOrientationvalue: "lhs",
+        status: true
       },
       {
        DoorOrientationname: "RHS",
        DoorOrientationvalue: "rhs",
+       status: true
       },
     ]);
 
@@ -71,10 +73,12 @@ async function seedDoorjamblocations() {
       {
        jambLocationName: "Front",
         jambLocationValue: "front",
+        status: true
       },
       {
       jambLocationName: "Back",
         jambLocationValue: "back",
+        status: true
       },
     ]);
 
@@ -95,14 +99,17 @@ async function seedDoorFrames() {
       {
         frameName: "Full",
         frameValue:"full",
+        status: true
       },
       {
       frameName: "Half",
        frameValue:"half",
+       status: true
       },
       {
       frameName: "No",
        frameValue:"no",
+       status: true
       }
     ]);
 

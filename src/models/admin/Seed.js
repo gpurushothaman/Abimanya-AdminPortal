@@ -26,10 +26,12 @@ async function seedDoorThresholds() {
       {
         thresholdName: "Yes",
         thresholdValue: "yes",
+        status: true
       },
       {
         thresholdName: "No",
         thresholdValue: "no",
+        status: true
       },
     ]);
 

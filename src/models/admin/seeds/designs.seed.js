@@ -21,7 +21,7 @@ module.exports = async function seedDoorDesigns() {
           status: true
         },
         {
-            designName: "Skin Classic",
+            designName: "Skin",
             designValue: "skinClassic",
           status: true
         }

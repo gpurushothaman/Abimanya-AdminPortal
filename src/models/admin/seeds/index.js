@@ -7,6 +7,7 @@ const seedDoorOrientations = require("./orentations.seed");
 const seedDoorJambLocations = require("./jambLocations.seed");
 const seedDoorFrames = require("./frames.seed");
 const seedDoorDesigns = require("./designs.seed");
+const seedDoorSubDesigns = require("./subDesign.seed");
 
 async function seed() {
   try {
@@ -18,7 +19,8 @@ async function seed() {
       seedDoorOrientations,
       seedDoorJambLocations,
       seedDoorFrames,
-      seedDoorDesigns
+      seedDoorDesigns,
+      seedDoorSubDesigns
     ];
 
     for (const seeder of seeders) {

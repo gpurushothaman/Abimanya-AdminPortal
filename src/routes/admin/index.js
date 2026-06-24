@@ -11,6 +11,8 @@ router.use("/door-orientation",require("./doorOrientationRoutes"));
 router.use("/door-jamb-location",require("./doorJambLocationRoutes"));
 router.use("/door-frame",require("./doorFrameRoutes"));
 router.use("/door-threshold",require("./doorThresholdRoutes"));
+router.use( "/door-sub-design",require("./doorSubDesignRoutes"));
+
 
 
 module.exports = router;

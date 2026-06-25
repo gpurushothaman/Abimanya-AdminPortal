@@ -1,14 +1,14 @@
-const DoorSubDesign = require("../../models/admin/DoorSubDesign");
+const DoorModel = require("../../models/admin/DoorModel");
 
-exports.getDoorSubDesign = async (req, res) => {
+exports.getDoorModels = async (req, res) => {
   try {
-    const doorSubDesign = await DoorSubDesign.find()
-      .populate("designId");
+    const doorModel = await DoorModel.find()
+      .populate("subDesignId");
  
     res.status(200).json({
       success: true,
-      count: doorSubDesign.length,
-      data: doorSubDesign,
+      count: doorModel.length,
+      data: doorModel,
     });
   } catch (error) {
     console.log("ERROR =>", error); // <-- add this line
@@ -20,10 +20,10 @@ exports.getDoorSubDesign = async (req, res) => {
   }
 };
 
-exports.updateDoorSubDesign = async (req, res) => {
+exports.updateDoorModel = async (req, res) => {
   try {
-    const updateDoorSubDesign =
-      await DoorSubDesign.findByIdAndUpdate(
+    const updateDoorModel =
+      await DoorModel.findByIdAndUpdate(
         req.params.id,
         req.body,
         {
@@ -32,16 +32,16 @@ exports.updateDoorSubDesign = async (req, res) => {
         }
       );
 
-    if (!updateDoorSubDesign) {
+    if (!updateDoorModel) {
       return res.status(404).json({
         success: false,
-        message: "Door SubDesign not found",
+        message: "Door model not found",
       });
     }
 
     res.status(200).json({
       success: true,
-      message: "Door SubDesign Updated",
+      message: "Door model Updated",
       data: updateDoorSubDesign,
     });
   } catch (error) {

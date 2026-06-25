@@ -10,11 +10,15 @@ module.exports = async function seedDoorModels() {
   }
 
   const flute = await DoorSubDesign.findOne({
-    subDesignValue: "Flute",
+    subDesignValue: "flute",
   });
 
   const elite = await DoorSubDesign.findOne({
-    subDesignValue: "Elite",
+    subDesignValue: "elite",
+  });
+
+  const platina = await DoorSubDesign.findOne({
+    subDesignValue: "platina",
   });
 
   await DoorModel.insertMany([
@@ -162,7 +166,19 @@ module.exports = async function seedDoorModels() {
       modelName: "LE 12",
       modelValue: "LE_12",
       status: true,
-    }
+    },
+    {
+      subDesignId: platina._id,
+      modelName: "LP 1",
+      modelValue: "LP_1",
+      status: true,
+    },
+    {
+      subDesignId: platina._id,
+      modelName: "LP 2",
+      modelValue: "LP_2",
+      status: true,
+    },
   ]);
 
   console.log("Door models seed completed");

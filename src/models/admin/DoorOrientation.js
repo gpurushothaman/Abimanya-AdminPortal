@@ -12,6 +12,7 @@ const doorOrientationSchema = new mongoose.Schema(
       required: true,
       enum: ["lhs", "rhs"],
     },
+    status: { type: Boolean, default: true },
   },
   {
     timestamps: true,

@@ -12,6 +12,7 @@ const doorFrameSchema = new mongoose.Schema(
       required: true,
       enum: ["full", "half", "no"],
     },
+    status: { type: Boolean, default: true },
   },
   {
     timestamps: true,

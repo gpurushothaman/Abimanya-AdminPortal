@@ -12,6 +12,7 @@ const doorJambLocationSchema = new mongoose.Schema(
       required: true,
       enum: ["front", "back"],
     },
+    status: { type: Boolean, default: true },
   },
   {
     timestamps: true,

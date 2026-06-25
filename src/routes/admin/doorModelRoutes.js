@@ -1,10 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const {
-  getDoorModels,
-  updateDoorModel,
-} = require("../../controllers/admin/doorModelController");
+const {getDoorModels,updateDoorModel,} = require("../../controllers/admin/doorModelController");
 
 router.get("/", getDoorModels);
 

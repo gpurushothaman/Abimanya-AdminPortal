@@ -42,7 +42,7 @@ exports.updateDoorModel = async (req, res) => {
     res.status(200).json({
       success: true,
       message: "Door model Updated",
-      data: updateDoorSubDesign,
+      data: updateDoorModel,
     });
   } catch (error) {
     res.status(500).json({

@@ -3,6 +3,7 @@ const DoorModel = require("../DoorModel");
 
 module.exports = async function seedDoorModels() {
   const exists = await DoorModel.exists({});
+ console.log("MODELS SEED FILE EXECUTED");
 
   if (exists) {
     console.log("Door models already seeded");
@@ -10,11 +11,11 @@ module.exports = async function seedDoorModels() {
   }
 
   const flute = await DoorSubDesign.findOne({
-    subDesignValue: "flute",
+    subDesignValue: "Flute",
   });
 
   const elite = await DoorSubDesign.findOne({
-    subDesignValue: "elite",
+    subDesignValue: "Elite",
   });
 
   await DoorModel.insertMany([

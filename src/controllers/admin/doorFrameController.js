@@ -1,30 +1,55 @@
 const DoorFrame = require("../../models/admin/DoorFrame");
+const DoorSubDesign = require("../../models/admin/DoorSubDesign");
+const Design = require("../../models/admin/Design");
 
-exports.createDoorFrame = async (req, res) => {
-  try {
-    const doorFrame = await DoorFrame.create(req.body);
+// exports.getAllDoorFrame = async (req, res) => {
+//   try {
+//     const doorFrames = await DoorFrame.find();
 
-    res.status(201).json({
-      success: true,
-      message: "Door Frame Created",
-      data: doorFrame,
-    });
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      message: error.message,
-    });
-  }
-};
+//     res.status(200).json({
+//       success: true,
+//       count: doorFrames.length,
+//       data: doorFrames,
+//     });
+//   } catch (error) {
+//     res.status(500).json({
+//       success: false,
+//       message: error.message,
+//     });
+//   }
+// };
+
 
 exports.getAllDoorFrame = async (req, res) => {
   try {
-    const doorFrames = await DoorFrame.find();
+    const designs = await Design.find().select("_id designName");
+    const subDesigns = await DoorSubDesign.find().select("_id subDesignName designId");
+    const frames = await DoorFrame.find().select("_id frameName subDesignId status");
+
+    const data = designs.map((design) => ({
+      _id: design._id,
+      name: design.designName,
+      subdesign: subDesigns
+        .filter((sub) => sub.designId.toString() === design._id.toString())
+        .map((sub) => ({
+          _id: sub._id,
+          name: sub.subDesignName,      
+          frame: frames
+            .filter(
+              (frame) =>
+                frame.subDesignId.toString() === sub._id.toString()
+            )
+            .map((frame) => ({
+              _id: frame._id,
+              frameName: frame.frameName,
+              status : frame.status
+            })),
+        })),
+    }));
 
     res.status(200).json({
       success: true,
-      count: doorFrames.length,
-      data: doorFrames,
+      data,
     });
   } catch (error) {
     res.status(500).json({
@@ -34,40 +59,17 @@ exports.getAllDoorFrame = async (req, res) => {
   }
 };
 
-exports.getDoorFrameById = async (req, res) => {
-  try {
-    const doorFrame = await DoorFrame.findById(req.params.id);
-
-    if (!doorFrame) {
-      return res.status(404).json({
-        success: false,
-        message: "Door Frame not found",
-      });
-    }
-
-    res.status(200).json({
-      success: true,
-      data: doorFrame,
-    });
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      message: error.message,
-    });
-  }
-};
 
 exports.updateDoorFrame = async (req, res) => {
   try {
-    const updatedDoorFrame =
-      await DoorFrame.findByIdAndUpdate(
-        req.params.id,
-        req.body,
-        {
-          returnDocument: "after",
-          runValidators: true,
-        }
-      );
+    const updatedDoorFrame = await DoorFrame.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      {
+        returnDocument: "after",
+        runValidators: true,
+      }
+    );
 
     if (!updatedDoorFrame) {
       return res.status(404).json({
@@ -80,30 +82,6 @@ exports.updateDoorFrame = async (req, res) => {
       success: true,
       message: "Door Frame Updated",
       data: updatedDoorFrame,
-    });
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      message: error.message,
-    });
-  }
-};
-
-exports.deleteDoorFrame = async (req, res) => {
-  try {
-    const deletedDoorFrame =
-      await DoorFrame.findByIdAndDelete(req.params.id);
-
-    if (!deletedDoorFrame) {
-      return res.status(404).json({
-        success: false,
-        message: "Door Frame not found",
-      });
-    }
-
-    res.status(200).json({
-      success: true,
-      message: "Door Frame Deleted",
     });
   } catch (error) {
     res.status(500).json({

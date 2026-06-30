@@ -4,7 +4,7 @@ const DoorOrientation = require("../DoorOrientation");
 module.exports = async function seedDoorOrientation() {
   const exists = await DoorOrientation.exists({});
   if (exists) {
-    console.log("Door models already seeded");
+    console.log("Door Orientations already seeded");
     return;
   }
 

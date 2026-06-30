@@ -1,0 +1,151 @@
+const DoorSubDesign = require("../DoorSubDesign");
+const DoorOrientation = require("../DoorOrientation");
+
+module.exports = async function seedDoorOrientation() {
+  const exists = await DoorOrientation.exists({});
+  if (exists) {
+    console.log("Door models already seeded");
+    return;
+  }
+
+  //Laminate
+  const flute = await DoorSubDesign.findOne({
+    subDesignValue: "flute",
+  });
+
+  const elite = await DoorSubDesign.findOne({
+    subDesignValue: "elite",
+  });
+
+  const titan = await DoorSubDesign.findOne({
+    subDesignValue: "titan",
+  });
+
+  const platina = await DoorSubDesign.findOne({
+    subDesignValue: "platina",
+  });
+
+  //Veneer
+  const emporio = await DoorSubDesign.findOne({
+    subDesignValue: "emporio",
+  });
+
+  const luxe = await DoorSubDesign.findOne({
+    subDesignValue: "luxe",
+  });
+
+  //Royal paint
+  const RP = await DoorSubDesign.findOne({
+    subDesignValue: "RP",
+  });
+
+  //Skin
+  const classic = await DoorSubDesign.findOne({
+    subDesignValue: "classic",
+  });
+
+  if (!exists) {
+    await DoorOrientation.insertMany([
+      {
+        subDesignId: flute._id,
+       DoorOrientationname: "LHS",
+          DoorOrientationvalue: "lhs",
+        status: true,
+      },
+      {
+        subDesignId: flute._id,
+       DoorOrientationname: "RHS",
+          DoorOrientationvalue: "rhs",
+        status: true,
+      },
+      {
+        subDesignId: elite._id,
+        DoorOrientationname: "LHS",
+          DoorOrientationvalue: "lhs",
+        status: true,
+      },
+      {
+        subDesignId: elite._id,
+       DoorOrientationname: "RHS",
+          DoorOrientationvalue: "rhs",
+        status: true,
+      },
+       {
+        subDesignId: titan._id,
+       DoorOrientationname: "LHS",
+          DoorOrientationvalue: "lhs",
+        status: true,
+      },
+      {
+        subDesignId: titan._id, 
+       DoorOrientationname: "RHS",
+          DoorOrientationvalue: "rhs",
+        status: true,
+      },
+      {
+        subDesignId: platina._id,
+       DoorOrientationname: "LHS",
+          DoorOrientationvalue: "lhs",
+        status: true,
+      },
+      {
+        subDesignId: platina._id,
+       DoorOrientationname: "RHS",
+          DoorOrientationvalue: "rhs",
+        status: true,
+      },
+      {
+        subDesignId: emporio._id,
+         DoorOrientationname: "LHS",
+          DoorOrientationvalue: "lhs",
+        status: true,
+      },
+      {
+        subDesignId: emporio._id,
+         DoorOrientationname: "RHS",
+          DoorOrientationvalue: "rhs",
+        status: true,
+      },
+      {
+        subDesignId: luxe._id,
+         DoorOrientationname: "LHS",
+          DoorOrientationvalue: "lhs",
+        status: true,
+      },
+      {
+        subDesignId: luxe._id,
+        DoorOrientationname: "RHS",
+          DoorOrientationvalue: "rhs",
+        status: true,
+      },
+      {
+        subDesignId: RP._id,
+        DoorOrientationname: "LHS",
+          DoorOrientationvalue: "lhs",
+        status: true,
+      },
+      {
+        subDesignId: RP._id,
+        DoorOrientationname: "RHS",
+          DoorOrientationvalue: "rhs",
+        status: true,
+      },
+      {
+        subDesignId: classic._id,
+        DoorOrientationname: "LHS",
+          DoorOrientationvalue: "lhs",
+        status: true,
+      },
+      {
+        subDesignId: classic._id,
+       DoorOrientationname: "RHS",
+          DoorOrientationvalue: "rhs",
+        status: true,
+      }
+    ]);
+
+    console.log("DoorOrientation seed completed");
+  } else {
+    console.log("DoorOrientation already seeded");
+  }
+};

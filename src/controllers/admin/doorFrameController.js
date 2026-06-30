@@ -2,22 +2,7 @@ const DoorFrame = require("../../models/admin/DoorFrame");
 const DoorSubDesign = require("../../models/admin/DoorSubDesign");
 const Design = require("../../models/admin/Design");
 
-// exports.getAllDoorFrame = async (req, res) => {
-//   try {
-//     const doorFrames = await DoorFrame.find();
 
-//     res.status(200).json({
-//       success: true,
-//       count: doorFrames.length,
-//       data: doorFrames,
-//     });
-//   } catch (error) {
-//     res.status(500).json({
-//       success: false,
-//       message: error.message,
-//     });
-//   }
-// };
 
 
 exports.getAllDoorFrame = async (req, res) => {

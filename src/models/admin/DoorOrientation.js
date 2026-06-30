@@ -2,6 +2,11 @@ const mongoose = require("mongoose");
 
 const doorOrientationSchema = new mongoose.Schema(
   {
+    subDesignId: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "DoorSubDesign",
+          required: true,
+        },
     DoorOrientationname: {
       type: String,
       required: true,
@@ -9,8 +14,7 @@ const doorOrientationSchema = new mongoose.Schema(
 
     DoorOrientationvalue: {
       type: String,
-      required: true,
-      enum: ["lhs", "rhs"],
+      required: true
     },
     status: { type: Boolean, default: true },
   },

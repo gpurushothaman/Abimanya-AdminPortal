@@ -3,7 +3,7 @@ require("dotenv").config();
 
 const seedDimensions = require("./dimension.seed");
 const seedDoorThresholds = require("./thresholds.seed");
-const seedDoorOrientations = require("./orentations.seed");
+const seedDoorOrientations = require("./orientations.seed");
 const seedDoorJambLocations = require("./jambLocations.seed");
 const seedDoorFrames = require("./frames.seed");
 const seedDoorDesigns = require("./designs.seed");

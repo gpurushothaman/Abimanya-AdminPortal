@@ -1,63 +1,49 @@
 const DoorOrientation = require("../../models/admin/DoorOrientation");
+const DoorSubDesign = require("../../models/admin/DoorSubDesign");
+const Design = require("../../models/admin/Design");
 
-exports.createDoorOrientation = async (req, res) => {
-  try {
-    const doorOrientation = await DoorOrientation.create(req.body);
 
-    res.status(201).json({
-      success: true,
-      message: "Door Orientation Created",
-      data: doorOrientation,
-    });
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      message: error.message,
-    });
-  }
-};
 
 exports.getAllDoorOrientation = async (req, res) => {
   try {
-    const doorOrientation = await DoorOrientation.find();
+     const designs = await Design.find().select("_id designName");
+     const subDesigns = await DoorSubDesign.find().select("_id subDesignName designId");
+   const Orientationsss = await DoorOrientation.find().select("_id DoorOrientationname subDesignId status");
+ 
+     const data = designs.map((design) => ({
+       _id: design._id,
+       name: design.designName,
+       subdesign: subDesigns
+         .filter((sub) => sub.designId.toString() === design._id.toString())
+         .map((sub) => ({
+           _id: sub._id,
+           name: sub.subDesignName,      
+           orientation: Orientationsss
+             .filter(
+               (orientation) =>
+                 orientation.subDesignId.toString() === sub._id.toString()
+             )
+             .map((orientation) => ({
+               _id: orientation._id,
+               DoorOrientationname: orientation.DoorOrientationname,
+               status : orientation.status
+             })),
+         })),
+     }));
+ 
+     res.status(200).json({
+       success: true,
+       data,
+     });
+   } catch (error) {
+     res.status(500).json({
+       success: false,
+       message: error.message,
+     });
+   }
+ };
 
-    res.status(200).json({
-      success: true,
-      count: doorOrientation.length,
-      data: doorOrientation,
-    });
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      message: error.message,
-    });
-  }
-};
 
-exports.getDoorOrientationById = async (req, res) => {
-  try {
-    const doorOrientation = await DoorOrientation.findById(
-      req.params.id
-    );
-
-    if (!doorOrientation) {
-      return res.status(404).json({
-        success: false,
-        message: "Door Orientation not found",
-      });
-    }
-
-    res.status(200).json({
-      success: true,
-      data: doorOrientation,
-    });
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      message: error.message,
-    });
-  }
-};
 
 exports.updateDoorOrientation = async (req, res) => {
   try {
@@ -91,28 +77,3 @@ exports.updateDoorOrientation = async (req, res) => {
   }
 };
 
-exports.deleteDoorOrientation = async (req, res) => {
-  try {
-    const deletedDoorOrientation =
-      await DoorOrientation.findByIdAndDelete(
-        req.params.id
-      );
-
-    if (!deletedDoorOrientation) {
-      return res.status(404).json({
-        success: false,
-        message: "Door Orientation not found",
-      });
-    }
-
-    res.status(200).json({
-      success: true,
-      message: "Door Orientation Deleted",
-    });
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      message: error.message,
-    });
-  }
-};

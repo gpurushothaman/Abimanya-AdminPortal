@@ -8,7 +8,7 @@ exports.getAllDoorOrientation = async (req, res) => {
   try {
      const designs = await Design.find().select("_id designName");
      const subDesigns = await DoorSubDesign.find().select("_id subDesignName designId");
-   const Orientationsss = await DoorOrientation.find().select("_id DoorOrientationname subDesignId status");
+   const Orientationsss = await DoorOrientation.find().select("_id DoorOrientationName subDesignId status");
  
      const data = designs.map((design) => ({
        _id: design._id,
@@ -25,12 +25,11 @@ exports.getAllDoorOrientation = async (req, res) => {
              )
              .map((orientation) => ({
                _id: orientation._id,
-               DoorOrientationname: orientation.DoorOrientationname,
+               DoorOrientationName: orientation.DoorOrientationName,
                status : orientation.status
              })),
          })),
      }));
- 
      res.status(200).json({
        success: true,
        data,

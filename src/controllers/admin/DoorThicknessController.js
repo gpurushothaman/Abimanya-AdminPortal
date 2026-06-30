@@ -1,63 +1,55 @@
 const DoorThickness = require("../../models/admin/DoorThickness");
+const DoorSubDesign = require("../../models/admin/DoorSubDesign");
+const Design = require("../../models/admin/Design");
 
-exports.createDoorThickness = async (req, res) => {
-  try {
-    const doorThickness = await DoorThickness.create(req.body);
 
-    res.status(201).json({
-      success: true,
-      message: "Door Thickness Created",
-      data: doorThickness,
-    });
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      message: error.message,
-    });
-  }
-};
 
 exports.getAllDoorThickness = async (req, res) => {
   try {
-    const doorThickness = await DoorThickness.find();
+     const designs = await Design.find().select("_id designName");
+     const subDesigns = await DoorSubDesign.find().select("_id subDesignName designId");
+   const Thicknesss = await DoorThickness.find().select("_id DoorThicknessName subDesignId status");
+ 
+     const data = designs.map((design) => ({
+       _id: design._id,
+       name: design.designName,
+       subdesign: subDesigns
+         .filter((sub) => sub.designId.toString() === design._id.toString())
+         .map((sub) => ({
+           _id: sub._id,
+           name: sub.subDesignName,      
+           thickness: Thicknesss
+             .filter(
+               (thickness) =>
+                 thickness.subDesignId.toString() === sub._id.toString()
+             )
+             .map((thickness) => ({
+               _id: thickness._id,
+               DoorThicknessName: thickness.DoorThicknessName,
+               status : thickness.status
+             })),
+         })),
+     }));
+     res.status(200).json({
+       success: true,
+       data,
+     });
+   } catch (error) {
+     res.status(500).json({
+       success: false,
+       message: error.message,
+     });
+   }
+ };
 
-    res.status(200).json({
-      success: true,
-      count: doorThickness.length,
-      data: doorThickness,
-    });
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      message: error.message,
-    });
-  }
-};
 
-exports.getDoorThicknessById = async (req, res) => {
-  try {
-    const doorThickness = await DoorThickness.findById(
-      req.params.id
-    );
 
-    if (!doorThickness) {
-      return res.status(404).json({
-        success: false,
-        message: "Door Thickness not found",
-      });
-    }
 
-    res.status(200).json({
-      success: true,
-      data: doorThickness,
-    });
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      message: error.message,
-    });
-  }
-};
+
+
+
+
+
 
 exports.updateDoorThickness = async (req, res) => {
   try {
@@ -91,28 +83,3 @@ exports.updateDoorThickness = async (req, res) => {
   }
 };
 
-exports.deleteDoorThickness = async (req, res) => {
-  try {
-    const deletedDoorThickness =
-      await DoorThickness.findByIdAndDelete(
-        req.params.id
-      );
-
-    if (!deletedDoorThickness) {
-      return res.status(404).json({
-        success: false,
-        message: "Door Thickness not found",
-      });
-    }
-
-    res.status(200).json({
-      success: true,
-      message: "Door Thickness Deleted",
-    });
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      message: error.message,
-    });
-  }
-};

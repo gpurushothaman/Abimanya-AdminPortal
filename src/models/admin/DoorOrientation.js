@@ -7,12 +7,12 @@ const doorOrientationSchema = new mongoose.Schema(
           ref: "DoorSubDesign",
           required: true,
         },
-    DoorOrientationname: {
+    DoorOrientationName: {
       type: String,
       required: true,
     },
 
-    DoorOrientationvalue: {
+    DoorOrientationValue: {
       type: String,
       required: true
     },

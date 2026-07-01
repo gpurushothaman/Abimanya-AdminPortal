@@ -2,14 +2,15 @@ const DoorFrame = require("../../models/admin/DoorFrame");
 const DoorSubDesign = require("../../models/admin/DoorSubDesign");
 const Design = require("../../models/admin/Design");
 
-
-
-
 exports.getAllDoorFrame = async (req, res) => {
   try {
     const designs = await Design.find().select("_id designName");
-    const subDesigns = await DoorSubDesign.find().select("_id subDesignName designId");
-    const frames = await DoorFrame.find().select("_id frameName subDesignId status");
+    const subDesigns = await DoorSubDesign.find().select(
+      "_id subDesignName designId"
+    );
+    const frames = await DoorFrame.find().select(
+      "_id frameName subDesignId status"
+    );
 
     const data = designs.map((design) => ({
       _id: design._id,
@@ -18,16 +19,15 @@ exports.getAllDoorFrame = async (req, res) => {
         .filter((sub) => sub.designId.toString() === design._id.toString())
         .map((sub) => ({
           _id: sub._id,
-          name: sub.subDesignName,      
+          name: sub.subDesignName,
           frame: frames
             .filter(
-              (frame) =>
-                frame.subDesignId.toString() === sub._id.toString()
+              (frame) => frame.subDesignId.toString() === sub._id.toString()
             )
             .map((frame) => ({
               _id: frame._id,
               frameName: frame.frameName,
-              status : frame.status
+              status: frame.status,
             })),
         })),
     }));
@@ -43,7 +43,6 @@ exports.getAllDoorFrame = async (req, res) => {
     });
   }
 };
-
 
 exports.updateDoorFrame = async (req, res) => {
   try {

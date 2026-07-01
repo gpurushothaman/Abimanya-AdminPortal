@@ -10,6 +10,8 @@ const seedDoorDesigns = require("./designs.seed");
 const seedDoorSubDesigns = require("./subDesign.seed");
 const seedDoorModels = require("./models.seed");
 const seedDoorThickness = require("./thickness.seed")
+const seedFrameTypes = require("./frameTypes.seed")
+const seedFrameTypeOptions = require("./frameTypeOptions.seed")
 
 async function seed() {
   try {
@@ -24,7 +26,9 @@ async function seed() {
       seedDoorDesigns,
       seedDoorSubDesigns,
       seedDoorModels,
-      seedDoorThickness
+      seedDoorThickness,
+      seedFrameTypes,
+      seedFrameTypeOptions
     ];
 
     for (const seeder of seeders) {

@@ -2,17 +2,17 @@ const mongoose = require("mongoose");
 
 const doorOrientationSchema = new mongoose.Schema(
   {
-    subDesignId: {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: "DoorSubDesign",
-          required: true,
-        },
-    DoorOrientationName: {
+    frameTypeOptionId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "DoorFrameTypeOption",
+      required: true,
+    },
+    doorOrientationName: {
       type: String,
       required: true,
     },
 
-    DoorOrientationValue: {
+    doorOrientationValue: {
       type: String,
       required: true
     },

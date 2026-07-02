@@ -1,11 +1,12 @@
 const express = require("express");
 const router = express.Router();
 
-const {getAllDoorOrientation,updateDoorOrientation} = require("../../controllers/admin/doorOrientationController");
+const {
+  getAllDoorOrientations,
+  updateDoorOrientation,
+} = require("../../controllers/admin/doorOrientationController");
 
-
-router.get("/", getAllDoorOrientation);
-router.put("/:id",updateDoorOrientation);
-
+router.get("/", getAllDoorOrientations);
+router.put("/:id", updateDoorOrientation);
 
 module.exports = router;

@@ -1,151 +1,87 @@
 const DoorSubDesign = require("../DoorSubDesign");
+const DoorFrame = require("../DoorFrame");
+const DoorFrameType = require("../DoorFrameType");
+const DoorFrameTypeOption = require("../DoorFrameTypeOption");
 const DoorOrientation = require("../DoorOrientation");
 
-module.exports = async function seedDoorOrientation() {
+module.exports = async function seedDoorOrientations() {
   const exists = await DoorOrientation.exists({});
+
   if (exists) {
-    console.log("Door Orientations already seeded");
+    console.log("Door orientation already seeded");
     return;
   }
 
-  //Laminate
-  const flute = await DoorSubDesign.findOne({
-    subDesignValue: "flute",
-  });
+  const data = [
+    {
+      subDesign: "flute",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      orientations: [
+        { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+    {
+      subDesign: "flute",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      orientations: [
+        { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+    {
+      subDesign: "flute",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      orientations: [
+        { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+  ];
 
-  const elite = await DoorSubDesign.findOne({
-    subDesignValue: "elite",
-  });
+  for (const item of data) {
+    const sub = await DoorSubDesign.findOne({
+      subDesignValue: item.subDesign,
+    });
 
-  const titan = await DoorSubDesign.findOne({
-    subDesignValue: "titan",
-  });
+    if (!sub) continue;
 
-  const platina = await DoorSubDesign.findOne({
-    subDesignValue: "platina",
-  });
+    const frame = await DoorFrame.findOne({
+      subDesignId: sub._id,
+      frameValue: item.frame,
+    });
 
-  //Veneer
-  const emporio = await DoorSubDesign.findOne({
-    subDesignValue: "emporio",
-  });
+    if (!frame) continue;
 
-  const luxe = await DoorSubDesign.findOne({
-    subDesignValue: "luxe",
-  });
+    const frameType = await DoorFrameType.findOne({
+      frameId: frame._id,
+      frameTypeValue: item.frameType,
+    });
 
-  //Royal paint
-  const RP = await DoorSubDesign.findOne({
-    subDesignValue: "RP",
-  });
+    if (!frameType) continue;
 
-  //Skin
-  const classic = await DoorSubDesign.findOne({
-    subDesignValue: "classic",
-  });
+    const frameTypeOption = await DoorFrameTypeOption.findOne({
+      frameTypeId: frameType._id,
+      frameTypeOptionValue: item.frameTypeOption,
+    });
 
-  if (!exists) {
-    await DoorOrientation.insertMany([
-      {
-        subDesignId: flute._id,
-       DoorOrientationName: "LHS",
-          DoorOrientationValue: "lhs",
-        status: true,
-      },
-      {
-        subDesignId: flute._id,
-       DoorOrientationName: "RHS",
-          DoorOrientationValue: "rhs",
-        status: true,
-      },
-      {
-        subDesignId: elite._id,
-        DoorOrientationName: "LHS",
-          DoorOrientationValue: "lhs",
-        status: true,
-      },
-      {
-        subDesignId: elite._id,
-       DoorOrientationName: "RHS",
-          DoorOrientationValue: "rhs",
-        status: true,
-      },
-       {
-        subDesignId: titan._id,
-       DoorOrientationName: "LHS",
-          DoorOrientationValue: "lhs",
-        status: true,
-      },
-      {
-        subDesignId: titan._id, 
-       DoorOrientationName: "RHS",
-          DoorOrientationValue: "rhs",
-        status: true,
-      },
-      {
-        subDesignId: platina._id,
-       DoorOrientationName: "LHS",
-          DoorOrientationValue: "lhs",
-        status: true,
-      },
-      {
-        subDesignId: platina._id,
-       DoorOrientationName: "RHS",
-          DoorOrientationValue: "rhs",
-        status: true,
-      },
-      {
-        subDesignId: emporio._id,
-         DoorOrientationName: "LHS",
-          DoorOrientationValue: "lhs",
-        status: true,
-      },
-      {
-        subDesignId: emporio._id,
-         DoorOrientationName: "RHS",
-          DoorOrientationValue: "rhs",
-        status: true,
-      },
-      {
-        subDesignId: luxe._id,
-         DoorOrientationName: "LHS",
-          DoorOrientationValue: "lhs",
-        status: true,
-      },
-      {
-        subDesignId: luxe._id,
-        DoorOrientationName: "RHS",
-          DoorOrientationValue: "rhs",
-        status: true,
-      },
-      {
-        subDesignId: RP._id,
-        DoorOrientationName: "LHS",
-          DoorOrientationValue: "lhs",
-        status: true,
-      },
-      {
-        subDesignId: RP._id,
-        DoorOrientationName: "RHS",
-          DoorOrientationValue: "rhs",
-        status: true,
-      },
-      {
-        subDesignId: classic._id,
-        DoorOrientationName: "LHS",
-          DoorOrientationValue: "lhs",
-        status: true,
-      },
-      {
-        subDesignId: classic._id,
-       DoorOrientationName: "RHS",
-          DoorOrientationValue: "rhs",
-        status: true,
-      }
-    ]);
+    if (!frameTypeOption) continue;
 
-    console.log("DoorOrientation seed completed");
-  } else {
-    console.log("DoorOrientation already seeded");
+    const docs = item.orientations.map((orientation) => ({
+      frameTypeOptionId: frameTypeOption._id,
+      doorOrientationName: orientation.name,
+      doorOrientationValue: orientation.value,
+      status: true,
+    }));
+
+    await DoorOrientation.insertMany(docs);
   }
+
+  console.log("Door orientation seed completed");
 };

@@ -2,11 +2,11 @@ const mongoose = require("mongoose");
 
 const doorJambLocationSchema = new mongoose.Schema(
   {
-    subDesignId: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "DoorSubDesign",
-      required: true,
-    },
+     frameTypeOptionId: {
+       type: mongoose.Schema.Types.ObjectId,
+       ref: "DoorFrameTypeOption",
+       required: true,
+     },
     jambLocationName: {
       type: String,
       required: true,

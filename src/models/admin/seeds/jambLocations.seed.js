@@ -1,151 +1,87 @@
 const DoorSubDesign = require("../DoorSubDesign");
+const DoorFrame = require("../DoorFrame");
+const DoorFrameType = require("../DoorFrameType");
+const DoorFrameTypeOption = require("../DoorFrameTypeOption");
 const DoorJambLocation = require("../DoorJambLocation");
 
-module.exports = async function seedDoorJambLocation() {
+module.exports = async function seedDoorJambLocations() {
   const exists = await DoorJambLocation.exists({});
+
   if (exists) {
     console.log("Door JambLocation already seeded");
     return;
   }
 
-  //Laminate
-  const flute = await DoorSubDesign.findOne({
-    subDesignValue: "flute",
-  });
+  const data = [
+    {
+      subDesign: "flute",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+    {
+      subDesign: "flute",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+    {
+      subDesign: "flute",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+  ];
 
-  const elite = await DoorSubDesign.findOne({
-    subDesignValue: "elite",
-  });
+  for (const item of data) {
+    const sub = await DoorSubDesign.findOne({
+      subDesignValue: item.subDesign,
+    });
 
-  const titan = await DoorSubDesign.findOne({
-    subDesignValue: "titan",
-  });
+    if (!sub) continue;
 
-  const platina = await DoorSubDesign.findOne({
-    subDesignValue: "platina",
-  });
+    const frame = await DoorFrame.findOne({
+      subDesignId: sub._id,
+      frameValue: item.frame,
+    });
 
-  //Veneer
-  const emporio = await DoorSubDesign.findOne({
-    subDesignValue: "emporio",
-  });
+    if (!frame) continue;
 
-  const luxe = await DoorSubDesign.findOne({
-    subDesignValue: "luxe",
-  });
+    const frameType = await DoorFrameType.findOne({
+      frameId: frame._id,
+      frameTypeValue: item.frameType,
+    });
 
-  //Royal paint
-  const RP = await DoorSubDesign.findOne({
-    subDesignValue: "RP",
-  });
+    if (!frameType) continue;
 
-  //Skin
-  const classic = await DoorSubDesign.findOne({
-    subDesignValue: "classic",
-  });
+    const frameTypeOption = await DoorFrameTypeOption.findOne({
+      frameTypeId: frameType._id,
+      frameTypeOptionValue: item.frameTypeOption,
+    });
 
-  if (!exists) {
-    await DoorJambLocation.insertMany([
-      {
-        subDesignId: flute._id,
-       jambLocationName: "Front",
-          jambLocationValue: "front",
-        status: true,
-      },
-      {
-        subDesignId: flute._id,
-       jambLocationName: "Back",
-          jambLocationValue: "back",
-        status: true,
-      },
-      {
-        subDesignId: elite._id,
-           jambLocationName: "Front",
-          jambLocationValue: "front",
-        status: true,
-      },
-      {
-        subDesignId: elite._id,
-      jambLocationName: "Back",
-          jambLocationValue: "back",
-        status: true,
-      },
-       {
-        subDesignId: titan._id,
-      jambLocationName: "Front",
-          jambLocationValue: "front",
-        status: true,
-      },
-      {
-        subDesignId: titan._id, 
-         jambLocationName: "Back",
-          jambLocationValue: "back",
-        status: true,
-      },
-      {
-        subDesignId: platina._id,
-      jambLocationName: "Front",
-          jambLocationValue: "front",
-        status: true,
-      },
-      {
-        subDesignId: platina._id,
-         jambLocationName: "Back",
-          jambLocationValue: "back",
-        status: true,
-      },
-      {
-        subDesignId: emporio._id,
-          jambLocationName: "Front",
-          jambLocationValue: "front",
-        status: true,
-      },
-      {
-        subDesignId: emporio._id,
-           jambLocationName: "Back",
-          jambLocationValue: "back",
-        status: true,
-      },
-      {
-        subDesignId: luxe._id,
-          jambLocationName: "Front",
-          jambLocationValue: "front",
-        status: true,
-      },
-      {
-        subDesignId: luxe._id,
-         jambLocationName: "Back",
-          jambLocationValue: "back",
-        status: true,
-      },
-      {
-        subDesignId: RP._id,
-          jambLocationName: "Front",
-          jambLocationValue: "front",
-        status: true,
-      },
-      {
-        subDesignId: RP._id,
-          jambLocationName: "Back",
-          jambLocationValue: "back",
-        status: true,
-      },
-      {
-        subDesignId: classic._id,
-          jambLocationName: "Front",
-          jambLocationValue: "front",
-        status: true,
-      },
-      {
-        subDesignId: classic._id,
-         jambLocationName: "Back",
-          jambLocationValue: "back",
-        status: true,
-      }
-    ]);
+    if (!frameTypeOption) continue;
 
-    console.log("DoorJambLocation seed completed");
-  } else {
-    console.log("DoorJambLocation already seeded");
+    const docs = item.jamblocations.map((jamblocation) => ({
+      frameTypeOptionId: frameTypeOption._id,
+      jambLocationName: jamblocation.name,
+      jambLocationValue: jamblocation.value,
+      status: true,
+    }));
+
+    await DoorJambLocation.insertMany(docs);
   }
+
+  console.log("Door jamblocation seed completed");
 };

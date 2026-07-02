@@ -1,260 +1,99 @@
 const DoorSubDesign = require("../DoorSubDesign");
+const DoorFrame = require("../DoorFrame");
+const DoorFrameType = require("../DoorFrameType");
+const DoorFrameTypeOption = require("../DoorFrameTypeOption");
 const DoorThickness = require("../DoorThickness");
 
 module.exports = async function seedDoorThickness() {
   const exists = await DoorThickness.exists({});
+
   if (exists) {
     console.log("Door Thickness already seeded");
     return;
   }
 
-  //Laminate
-  const flute = await DoorSubDesign.findOne({
-    subDesignValue: "flute",
-  });
+  const data = [
+    {
+      subDesign: "flute",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      Thicknesss: [
+        { name: "32", value: "32" },
+        { name: "35", value: "35" },
+        { name: "38", value: "38" },
+        { name: "40", value: "40" },
+        { name: "45", value: "45" },
+        { name: "50", value: "50" },
+      ],
+    },
+    {
+      subDesign: "flute",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      Thicknesss: [
+        { name: "32", value: "32" },
+        { name: "35", value: "35" },
+        { name: "38", value: "38" },
+        { name: "40", value: "40" },
+        { name: "45", value: "45" },
+        { name: "50", value: "50" },
+      ],
+    },
+    {
+      subDesign: "flute",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      Thicknesss: [
+        { name: "32", value: "32" },
+        { name: "35", value: "35" },
+        { name: "38", value: "38" },
+        { name: "40", value: "40" },
+        { name: "45", value: "45" },
+        { name: "50", value: "50" },
+      ],
+    },
+  ];
 
-  const elite = await DoorSubDesign.findOne({
-    subDesignValue: "elite",
-  });
+  for (const item of data) {
+    const sub = await DoorSubDesign.findOne({
+      subDesignValue: item.subDesign,
+    });
 
-  const titan = await DoorSubDesign.findOne({
-    subDesignValue: "titan",
-  });
+    if (!sub) continue;
 
-  const platina = await DoorSubDesign.findOne({
-    subDesignValue: "platina",
-  });
+    const frame = await DoorFrame.findOne({
+      subDesignId: sub._id,
+      frameValue: item.frame,
+    });
 
-  //Veneer
-  const emporio = await DoorSubDesign.findOne({
-    subDesignValue: "emporio",
-  });
+    if (!frame) continue;
 
-  const luxe = await DoorSubDesign.findOne({
-    subDesignValue: "luxe",
-  });
-  //Royal paint
-  const RP = await DoorSubDesign.findOne({
-    subDesignValue: "RP",
-  });
+    const frameType = await DoorFrameType.findOne({
+      frameId: frame._id,
+      frameTypeValue: item.frameType,
+    });
 
-  //Skin
-  const classic = await DoorSubDesign.findOne({
-    subDesignValue: "classic",
-  });
+    if (!frameType) continue;
 
-  if (!exists) {
-    await DoorThickness.insertMany([
-      {
-        subDesignId: flute._id,
-         DoorThicknessName:"32",
-          DoorThicknessValue: "32",
-        status: true,
-      },
-      {
-        subDesignId: flute._id,
-       DoorThicknessName: "35",
-          DoorThicknessValue: "35",
-        status: true,
-      },
-         {
-        subDesignId: flute._id,
-         DoorThicknessName:"38",
-          DoorThicknessValue: "38",
-        status: true,
-      },
-         {
-        subDesignId: flute._id,
-         DoorThicknessName:"40",
-          DoorThicknessValue: "40",
-        status: true,
-      },
-         {
-        subDesignId: flute._id,
-         DoorThicknessName:"45",
-          DoorThicknessValue: "45",
-        status: true,
-      },
-         {
-        subDesignId: flute._id,
-         DoorThicknessName:"50",
-          DoorThicknessValue: "50",
-        status: true,
-      },
-      {
-        subDesignId: elite._id,
-            DoorThicknessName:"32",
-          DoorThicknessValue:  "32",
-        status: true,
-      },
-      {
-        subDesignId: elite._id,
-     DoorThicknessName: "35",
-          DoorThicknessValue:  "35",
-        status: true,
-      },
-       {
-        subDesignId: elite._id,
-            DoorThicknessName:"38",
-          DoorThicknessValue:  "38",
-        status: true,
-      },
-       {
-        subDesignId: elite._id,
-            DoorThicknessName:"40",
-          DoorThicknessValue:  "40",
-        status: true,
-      },
-       {
-        subDesignId: elite._id,
-            DoorThicknessName:"45",
-          DoorThicknessValue:  "45",
-        status: true,
-      },
-       {
-        subDesignId: elite._id,
-            DoorThicknessName:"50",
-          DoorThicknessValue:  "50",
-        status: true,
-      },
-       {
-        subDesignId: titan._id,
-        DoorThicknessName: "32",
-          DoorThicknessValue:  "32",
-        status: true,
-      },
-        {
-        subDesignId: titan._id,
-        DoorThicknessName: "35",
-          DoorThicknessValue:  "35",
-        status: true,
-      },
-        {
-        subDesignId: titan._id,
-        DoorThicknessName: "38",
-          DoorThicknessValue:  "38",
-        status: true,
-      },
-        {
-        subDesignId: titan._id,
-        DoorThicknessName: "40",
-          DoorThicknessValue:  "40",
-        status: true,
-      },
-        {
-        subDesignId: titan._id,
-        DoorThicknessName: "45",
-          DoorThicknessValue:  "45",
-        status: true,
-      },
-      {
-        subDesignId: titan._id, 
-          DoorThicknessName: "50",
-          DoorThicknessValue: "50",
-        status: true,
-      },
-      {
-        subDesignId: platina._id,
-      DoorThicknessName: "32",
-      DoorThicknessValue:  "32",
-        status: true,
-      },
-      {
-        subDesignId: platina._id,
-             DoorThicknessName: "35",
-        DoorThicknessValue: "35",
-        status: true,
-      },
-       {
-        subDesignId: platina._id,
-      DoorThicknessName: "38",
-      DoorThicknessValue:  "38",
-        status: true,
-      },
-       {
-        subDesignId: platina._id,
-      DoorThicknessName: "40",
-      DoorThicknessValue:  "40",
-        status: true,
-      },
-       {
-        subDesignId: platina._id,
-      DoorThicknessName: "45",
-      DoorThicknessValue:  "45",
-        status: true,
-      },
-       {
-        subDesignId: platina._id,
-      DoorThicknessName: "50",
-      DoorThicknessValue:  "50",
-        status: true,
-      },
-      {
-        subDesignId: emporio._id,
-           DoorThicknessName:"40",
-          DoorThicknessValue:  "40",
-        status: true,
-      },
-      {
-        subDesignId: emporio._id,
-              DoorThicknessName: "45",
-        DoorThicknessValue:  "45",
-        status: true,
-      },
-        {
-        subDesignId: emporio._id,
-           DoorThicknessName:"50",
-          DoorThicknessValue:  "50",
-        status: true,
-      },
-        {
-        subDesignId: emporio._id,
-           DoorThicknessName:"55",
-          DoorThicknessValue:  "55",
-        status: true,
-      },
-      {
-        subDesignId: luxe._id,
-         DoorThicknessName: "40",
-         DoorThicknessValue: "40",
-        status: true,
-      },
-      {
-        subDesignId: luxe._id,
-            DoorThicknessName: "45",
-          DoorThicknessValue:  "45",
-        status: true,
-      },
-         {
-        subDesignId: luxe._id,
-            DoorThicknessName: "50",
-          DoorThicknessValue:  "50",
-        status: true,
-      },
-         {
-        subDesignId: luxe._id,
-            DoorThicknessName: "55",
-          DoorThicknessValue:  "55",
-        status: true,
-      },
-       {
-        subDesignId: RP._id,
-            DoorThicknessName: "Not Available",
-          DoorThicknessValue:  "0",
-        status: true,
-      },
-   
-      {
-        subDesignId: classic._id,
-         DoorThicknessName:"32",
-          DoorThicknessValue:  "32",
-        status: true,
-      },
-    
-    ]);
+    const frameTypeOption = await DoorFrameTypeOption.findOne({
+      frameTypeId: frameType._id,
+      frameTypeOptionValue: item.frameTypeOption,
+    });
 
-    console.log("DoorThickness seed completed");
-  } else {
-    console.log("DoorThickness already seeded");
+    if (!frameTypeOption) continue;
+
+    const docs = item.Thicknesss.map((Thickness) => ({
+      frameTypeOptionId: frameTypeOption._id,
+      DoorThicknessName: Thickness.name,
+      DoorThicknessValue: Thickness.value,
+      status: true,
+    }));
+
+    await DoorThickness.insertMany(docs);
   }
+
+  console.log("Door Thickness seed completed");
 };

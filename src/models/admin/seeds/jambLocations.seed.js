@@ -43,6 +43,465 @@ module.exports = async function seedDoorJambLocations() {
         { name: "BACK", value: "back" },
       ],
     },
+     {
+      subDesign: "elite",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+    {
+      subDesign: "elite",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+    {
+      subDesign: "elite",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+     {
+      subDesign: "platina",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+    {
+      subDesign: "platina",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+    {
+      subDesign: "platina",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+     {
+      subDesign: "titan",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+    {
+      subDesign: "titan",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+    {
+      subDesign: "titan",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+     {
+      subDesign: "emporio",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+    {
+      subDesign: "emporio",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+     {
+      subDesign: "emporio",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+     {
+      subDesign: "luxe",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+    {
+      subDesign: "luxe",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+    {
+      subDesign: "luxe",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+    {
+      subDesign: "RP",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+    {
+      subDesign: "RP",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+    {
+      subDesign: "RP",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+    {
+      subDesign: "classic",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+    {
+      subDesign: "classic",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+    {
+      subDesign: "classic",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+   
+   
+   
+
+
+    //  Half portion
+
+     {
+      subDesign: "flute",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+    {
+      subDesign: "flute",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+    {
+      subDesign: "flute",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+     {
+      subDesign: "elite",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+    {
+      subDesign: "elite",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+    {
+      subDesign: "elite",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+     {
+      subDesign: "platina",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+    {
+      subDesign: "platina",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+    {
+      subDesign: "platina",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+     {
+      subDesign: "titan",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+    {
+      subDesign: "titan",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+    {
+      subDesign: "titan",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+     {
+      subDesign: "emporio",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+    {
+      subDesign: "emporio",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+     {
+      subDesign: "emporio",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+     {
+      subDesign: "luxe",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+    {
+      subDesign: "luxe",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+    {
+      subDesign: "luxe",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+    {
+      subDesign: "RP",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+    {
+      subDesign: "RP",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+    {
+      subDesign: "RP",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+    {
+      subDesign: "classic",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+    {
+      subDesign: "classic",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+    {
+      subDesign: "classic",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      jamblocations: [
+        { name: "FRONT", value: "front" },
+        { name: "BACK", value: "back" },
+      ],
+    },
+  
+
   ];
 
   for (const item of data) {

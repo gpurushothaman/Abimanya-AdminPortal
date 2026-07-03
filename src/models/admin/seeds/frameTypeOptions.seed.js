@@ -11,6 +11,7 @@ module.exports = async function seedDoorFrameTypeOptions() {
   }
 
   const data = [
+    // laminate full
     {
       subDesign: "flute",
       frame: "full",
@@ -21,6 +22,171 @@ module.exports = async function seedDoorFrameTypeOptions() {
         { name: "Steambeech", value: "Steambeech" },
       ],
     },
+    {
+      subDesign: "elite",
+      frame: "full",
+      frameType: "solidWood",
+      options: [
+        { name: "African Teak", value: "Africanteak" },
+        { name: "Mahogany", value: "Mahogany" },
+        { name: "Steambeech", value: "Steambeech" },
+      ],
+    },
+      {
+      subDesign: "platina",
+      frame: "full",
+      frameType: "solidWood",
+      options: [
+        { name: "African Teak", value: "Africanteak" },
+        { name: "Mahogany", value: "Mahogany" },
+        { name: "Steambeech", value: "Steambeech" },
+      ],
+    },
+      {
+      subDesign: "titan",
+      frame: "full",
+      frameType: "solidWood",
+      options: [
+        { name: "African Teak", value: "Africanteak" },
+        { name: "Mahogany", value: "Mahogany" },
+        { name: "Steambeech", value: "Steambeech" },
+      ],
+    },
+    // laminate half
+    {
+      subDesign: "flute",
+      frame: "half",
+      frameType: "solidWood",
+      options: [
+        { name: "African Teak", value: "Africanteak" },
+        { name: "Mahogany", value: "Mahogany" },
+        { name: "Steambeech", value: "Steambeech" },
+      ],
+    },
+    {
+      subDesign: "elite",
+      frame: "half",
+      frameType: "solidWood",
+      options: [
+        { name: "African Teak", value: "Africanteak" },
+        { name: "Mahogany", value: "Mahogany" },
+        { name: "Steambeech", value: "Steambeech" },
+      ],
+    },
+      {
+      subDesign: "platina",
+      frame: "half",
+      frameType: "solidWood",
+      options: [
+        { name: "African Teak", value: "Africanteak" },
+        { name: "Mahogany", value: "Mahogany" },
+        { name: "Steambeech", value: "Steambeech" },
+      ],
+    },
+      {
+      subDesign: "titan",
+      frame: "half",
+      frameType: "solidWood",
+      options: [
+        { name: "African Teak", value: "Africanteak" },
+        { name: "Mahogany", value: "Mahogany" },
+        { name: "Steambeech", value: "Steambeech" },
+      ],
+    },
+
+
+    // veneer full
+     {
+      subDesign: "emporio",
+      frame: "full",
+      frameType: "solidWood",
+      options: [
+        { name: "African Teak", value: "Africanteak" },
+        { name: "Mahogany", value: "Mahogany" },
+        { name: "Steambeech", value: "Steambeech" },
+      ],
+    },
+    {
+      subDesign: "luxe",
+      frame: "full",
+      frameType: "solidWood",
+      options: [
+        { name: "African Teak", value: "Africanteak" },
+        { name: "Mahogany", value: "Mahogany" },
+        { name: "Steambeech", value: "Steambeech" },
+      ],
+    },
+      
+    //  venner half
+         {
+      subDesign: "emporio",
+      frame: "half",
+      frameType: "solidWood",
+      options: [
+        { name: "African Teak", value: "Africanteak" },
+        { name: "Mahogany", value: "Mahogany" },
+        { name: "Steambeech", value: "Steambeech" },
+      ],
+    },
+    {
+      subDesign: "luxe",
+      frame: "half",
+      frameType: "solidWood",
+      options: [
+        { name: "African Teak", value: "Africanteak" },
+        { name: "Mahogany", value: "Mahogany" },
+        { name: "Steambeech", value: "Steambeech" },
+      ],
+    },
+    
+    // royal paint full
+
+           {
+      subDesign: "RP",
+      frame: "full",
+      frameType: "solidWood",
+      options: [
+        { name: "African Teak", value: "Africanteak" },
+        { name: "Mahogany", value: "Mahogany" },
+        { name: "Steambeech", value: "Steambeech" },
+      ],
+    },
+    // royal paint half
+          {
+      subDesign: "RP",
+      frame: "half",
+      frameType: "solidWood",
+      options: [
+        { name: "African Teak", value: "Africanteak" },
+        { name: "Mahogany", value: "Mahogany" },
+        { name: "Steambeech", value: "Steambeech" },
+      ],
+    },
+      // skin classic full
+
+           {
+      subDesign: "classic",
+      frame: "full",
+      frameType: "solidWood",
+      options: [
+        { name: "African Teak", value: "Africanteak" },
+        { name: "Mahogany", value: "Mahogany" },
+        { name: "Steambeech", value: "Steambeech" },
+      ],
+    },
+    // skin classic half
+          {
+      subDesign: "classic",
+      frame: "half",
+      frameType: "solidWood",
+      options: [
+        { name: "African Teak", value: "Africanteak" },
+        { name: "Mahogany", value: "Mahogany" },
+        { name: "Steambeech", value: "Steambeech" },
+      ],
+    },
+      
+
   ];
 
   if (!exists) {

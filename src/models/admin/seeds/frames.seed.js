@@ -178,7 +178,6 @@ module.exports = async function seedDoorFrames() {
         frameValue: "no",
         status: true,
       },
-
       {
         subDesignId: classic._id,
         frameName: "Full",

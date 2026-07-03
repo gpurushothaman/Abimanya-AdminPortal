@@ -2,11 +2,11 @@ const mongoose = require("mongoose");
 
 const doorThresholdSchema = new mongoose.Schema(
   {
-     subDesignId: {
-                  type: mongoose.Schema.Types.ObjectId,
-                  ref: "DoorSubDesign",
-                  required: true,
-                },
+     frameTypeOptionId: {
+               type: mongoose.Schema.Types.ObjectId,
+               ref: "DoorFrameTypeOption",
+               required: true,
+             },
     thresholdName: {type: String,required: true,},
     thresholdValue: {type: String,required: true},
     status: { type: Boolean, default: true },

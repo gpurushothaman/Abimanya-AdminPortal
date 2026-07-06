@@ -37,6 +37,7 @@ exports.updateDoorModel = async (req, res) => {
         modelValue
       );
 
+
       if (fs.existsSync(folder)) {
         fs.readdirSync(folder).forEach((file) => {
           const filePath = path.join(folder, file);
@@ -50,12 +51,12 @@ exports.updateDoorModel = async (req, res) => {
 
       fs.renameSync(modelFile.path, destination);
 
-      updateData.modelPath = destination;
+      updateData.modelPath = destination.replace(/\\/g, "/").replace(/^src\//, "");
       updateData.modelFileName = modelFile.filename;
     }
 
     if (textureFile && subDesignValue && modelValue) {
-      const folder = path.join(
+      const folder = path.join(       
         "src/assets/doors/textures",
         subDesignValue,
         modelValue
@@ -74,7 +75,7 @@ exports.updateDoorModel = async (req, res) => {
 
       fs.renameSync(textureFile.path, destination);
 
-      updateData.modelMainTexturePath = destination;
+      updateData.modelMainTexturePath = destination.replace(/\\/g, "/").replace(/^src\//, "");
       updateData.modelMainTextureFileName = textureFile.filename;
     }
 
@@ -93,7 +94,7 @@ exports.updateDoorModel = async (req, res) => {
     });
   } catch (err) {
     res.status(500).json({
-      success: "sdfsdsdsd",
+      success: false,
       message: err.message,
     });
   }

@@ -15,6 +15,40 @@ const DoorModelSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    useCommonModelStatus: {
+      type: Boolean,
+      default: true,
+    },
+    modelPath:{
+      type: String,
+      required: false,
+      default: "",
+    },
+    modelFileName:{
+      type: String,
+      required: false,
+      default: "",
+    },
+    modelMainTexturePath:{
+      type: String,
+      required: false,
+      default: "",
+    },
+    modelMainTextureFileName:{
+      type: String,
+      required: false,
+      default: "",
+    },
+    modelMainTextureThumbnailPath:{
+      type: String,
+      required: false,
+      default: "",
+    },
+    modelSeamlessTextureID:{
+      type: String,
+      required: false,
+      default: "",
+    },
     status: {
       type: Boolean,
       default: true,

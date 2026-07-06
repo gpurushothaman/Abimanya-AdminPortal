@@ -19,9 +19,11 @@ const cors = require("cors");
 const app = express();
 app.use(cors());
 app.use(express.json());
-
-
-
+app.use(express.urlencoded({ extended: true }));
+app.use(
+    "/assets",
+    express.static(path.join(__dirname, "src/assets"))
+  );
 
 //Admin panel - auth
 app.use("/api/admin/auth", authRoutes);

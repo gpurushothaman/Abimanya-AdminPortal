@@ -13,7 +13,7 @@ module.exports = async function seedDoorOrientations() {
   }
 
   const data = [
-    {
+     {
       subDesign: "flute",
       frame: "full",
       frameType: "solidWood",
@@ -29,7 +29,7 @@ module.exports = async function seedDoorOrientations() {
       frameType: "solidWood",
       frameTypeOption: "Mahogany",
       orientations: [
-        { name: "LHS", value: "lhs" },
+       { name: "LHS", value: "lhs" },
         { name: "RHS", value: "rhs" },
       ],
     },
@@ -43,7 +43,465 @@ module.exports = async function seedDoorOrientations() {
         { name: "RHS", value: "rhs" },
       ],
     },
-  ];
+     {
+      subDesign: "elite",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      orientations: [
+        { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+    {
+      subDesign: "elite",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      orientations: [
+       { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+    {
+      subDesign: "elite",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      orientations: [
+       { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+     {
+      subDesign: "platina",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      orientations: [
+       { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+    {
+      subDesign: "platina",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      orientations: [
+        { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+    {
+      subDesign: "platina",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      orientations: [
+       { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+     {
+      subDesign: "titan",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      orientations: [
+        { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+    {
+      subDesign: "titan",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      orientations: [
+        { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+    {
+      subDesign: "titan",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      orientations: [
+        { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+     {
+      subDesign: "emporio",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      orientations: [
+     { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+    {
+      subDesign: "emporio",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      orientations: [
+         { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+     {
+      subDesign: "emporio",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      orientations: [
+        { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+     {
+      subDesign: "luxe",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      orientations: [
+         { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+    {
+      subDesign: "luxe",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      orientations: [
+         { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+    {
+      subDesign: "luxe",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      orientations: [
+         { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+    {
+      subDesign: "RP",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      orientations: [
+        { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+    {
+      subDesign: "RP",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      orientations: [
+         { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+    {
+      subDesign: "RP",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      orientations: [
+        { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+    {
+      subDesign: "classic",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      orientations: [
+         { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+    {
+      subDesign: "classic",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      orientations: [
+         { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+    {
+      subDesign: "classic",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      orientations: [
+         { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+   
+   
+   
+
+
+    //  Half portion
+
+     {
+      subDesign: "flute",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      orientations: [
+        { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+    {
+      subDesign: "flute",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      orientations: [
+         { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+    {
+      subDesign: "flute",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      orientations: [
+         { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+     {
+      subDesign: "elite",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      orientations: [
+        { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+    {
+      subDesign: "elite",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      orientations: [
+         { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+    {
+      subDesign: "elite",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      orientations: [
+         { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+     {
+      subDesign: "platina",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      orientations: [
+        { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+    {
+      subDesign: "platina",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      orientations: [
+         { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+    {
+      subDesign: "platina",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      orientations: [
+         { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+     {
+      subDesign: "titan",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      orientations: [
+        { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+    {
+      subDesign: "titan",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      orientations: [
+        { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+    {
+      subDesign: "titan",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      orientations: [
+        { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+     {
+      subDesign: "emporio",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      orientations: [
+        { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+    {
+      subDesign: "emporio",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      orientations: [
+         { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+     {
+      subDesign: "emporio",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      orientations: [
+        { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+     {
+      subDesign: "luxe",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      orientations: [
+        { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+    {
+      subDesign: "luxe",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      orientations: [
+         { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+    {
+      subDesign: "luxe",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      orientations: [
+         { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+    {
+      subDesign: "RP",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      orientations: [
+         { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+    {
+      subDesign: "RP",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      orientations: [
+         { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+    {
+      subDesign: "RP",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      orientations: [
+         { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+    {
+      subDesign: "classic",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      orientations: [
+        { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+    {
+      subDesign: "classic",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      orientations: [
+         { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+    {
+      subDesign: "classic",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      orientations: [
+         { name: "LHS", value: "lhs" },
+        { name: "RHS", value: "rhs" },
+      ],
+    },
+
+  ]
 
   for (const item of data) {
     const sub = await DoorSubDesign.findOne({

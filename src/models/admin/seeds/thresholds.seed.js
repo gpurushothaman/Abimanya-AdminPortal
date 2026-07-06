@@ -1,151 +1,545 @@
 const DoorSubDesign = require("../DoorSubDesign");
+const DoorFrame = require("../DoorFrame");
+const DoorFrameType = require("../DoorFrameType");
+const DoorFrameTypeOption = require("../DoorFrameTypeOption");
 const DoorThreshold = require("../DoorThreshold");
 
-module.exports = async function seedDoorThreshold() {
+module.exports = async function seedDoorThresholds() {
   const exists = await DoorThreshold.exists({});
+
   if (exists) {
-    console.log("Door Threshold already seeded");
+    console.log("Door Thresholds already seeded");
     return;
   }
 
-  //Laminate
-  const flute = await DoorSubDesign.findOne({
-    subDesignValue: "flute",
-  });
+  const data = [
+     {
+      subDesign: "flute",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      thresholds: [
+        { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+    {
+      subDesign: "flute",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      thresholds: [
+       { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+    {
+      subDesign: "flute",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      thresholds: [
+        { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+     {
+      subDesign: "elite",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      thresholds: [
+        { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+    {
+      subDesign: "elite",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      thresholds: [
+       { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+    {
+      subDesign: "elite",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      thresholds: [
+       { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+     {
+      subDesign: "platina",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      thresholds: [
+       { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+    {
+      subDesign: "platina",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      thresholds: [
+        { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+    {
+      subDesign: "platina",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      thresholds: [
+       { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+     {
+      subDesign: "titan",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      thresholds: [
+        { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+    {
+      subDesign: "titan",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      thresholds: [
+        { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+    {
+      subDesign: "titan",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      thresholds: [
+        { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+     {
+      subDesign: "emporio",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      thresholds: [
+     { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+    {
+      subDesign: "emporio",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      thresholds: [
+         { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+     {
+      subDesign: "emporio",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      thresholds: [
+        { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+     {
+      subDesign: "luxe",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      thresholds: [
+         { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+    {
+      subDesign: "luxe",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      thresholds: [
+         { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+    {
+      subDesign: "luxe",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      thresholds: [
+         { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+    {
+      subDesign: "RP",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      thresholds: [
+        { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+    {
+      subDesign: "RP",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      thresholds: [
+         { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+    {
+      subDesign: "RP",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      thresholds: [
+        { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+    {
+      subDesign: "classic",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      thresholds: [
+         { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+    {
+      subDesign: "classic",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      thresholds: [
+         { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+    {
+      subDesign: "classic",
+      frame: "full",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      thresholds: [
+         { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+   
+   
+   
 
-  const elite = await DoorSubDesign.findOne({
-    subDesignValue: "elite",
-  });
 
-  const titan = await DoorSubDesign.findOne({
-    subDesignValue: "titan",
-  });
+    //  Half portion
 
-  const platina = await DoorSubDesign.findOne({
-    subDesignValue: "platina",
-  });
+     {
+      subDesign: "flute",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      thresholds: [
+        { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+    {
+      subDesign: "flute",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      thresholds: [
+         { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+    {
+      subDesign: "flute",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      thresholds: [
+         { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+     {
+      subDesign: "elite",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      thresholds: [
+        { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+    {
+      subDesign: "elite",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      thresholds: [
+         { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+    {
+      subDesign: "elite",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      thresholds: [
+         { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+     {
+      subDesign: "platina",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      thresholds: [
+        { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+    {
+      subDesign: "platina",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      thresholds: [
+         { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+    {
+      subDesign: "platina",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      thresholds: [
+         { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+     {
+      subDesign: "titan",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      thresholds: [
+        { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+    {
+      subDesign: "titan",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      thresholds: [
+        { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+    {
+      subDesign: "titan",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      thresholds: [
+        { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+     {
+      subDesign: "emporio",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      thresholds: [
+        { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+    {
+      subDesign: "emporio",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      thresholds: [
+         { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+     {
+      subDesign: "emporio",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      thresholds: [
+        { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+     {
+      subDesign: "luxe",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      thresholds: [
+        { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+    {
+      subDesign: "luxe",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      thresholds: [
+         { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+    {
+      subDesign: "luxe",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      thresholds: [
+         { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+    {
+      subDesign: "RP",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      thresholds: [
+         { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+    {
+      subDesign: "RP",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      thresholds: [
+         { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+    {
+      subDesign: "RP",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      thresholds: [
+         { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+    {
+      subDesign: "classic",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Africanteak",
+      thresholds: [
+        { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+    {
+      subDesign: "classic",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Mahogany",
+      thresholds: [
+         { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
+    {
+      subDesign: "classic",
+      frame: "half",
+      frameType: "solidWood",
+      frameTypeOption: "Steambeech",
+      thresholds: [
+         { name: "Yes", value: "Yes" },
+        { name: "No", value: "No" },
+      ],
+    },
 
-  //Veneer
-  const emporio = await DoorSubDesign.findOne({
-    subDesignValue: "emporio",
-  });
+  ]
 
-  const luxe = await DoorSubDesign.findOne({
-    subDesignValue: "luxe",
-  });
+  for (const item of data) {
+    const sub = await DoorSubDesign.findOne({
+      subDesignValue: item.subDesign,
+    });
 
-  //Royal paint
-  const RP = await DoorSubDesign.findOne({
-    subDesignValue: "RP",
-  });
+    if (!sub) continue;
 
-  //Skin
-  const classic = await DoorSubDesign.findOne({
-    subDesignValue: "classic",
-  });
+    const frame = await DoorFrame.findOne({
+      subDesignId: sub._id,
+      frameValue: item.frame,
+    });
 
-  if (!exists) {
-    await DoorThreshold.insertMany([
-      {
-        subDesignId: flute._id,
-       thresholdName: "Yes",
-          thresholdValue: "yes",
-        status: true,
-      },
-      {
-        subDesignId: flute._id,
-       thresholdName: "No",
-          thresholdValue: "no",
-        status: true,
-      },
-      {
-        subDesignId: elite._id,
-           thresholdName: "Yes",
-          thresholdValue: "yes",
-        status: true,
-      },
-      {
-        subDesignId: elite._id,
-     thresholdName: "No",
-          thresholdValue: "no",
-        status: true,
-      },
-       {
-        subDesignId: titan._id,
-       thresholdName: "Yes",
-          thresholdValue: "yes",
-        status: true,
-      },
-      {
-        subDesignId: titan._id, 
-           thresholdName: "No",
-          thresholdValue: "no",
-        status: true,
-      },
-      {
-        subDesignId: platina._id,
-     thresholdName: "Yes",
-          thresholdValue: "yes",
-        status: true,
-      },
-      {
-        subDesignId: platina._id,
-            thresholdName: "No",
-          thresholdValue: "no",
-        status: true,
-      },
-      {
-        subDesignId: emporio._id,
-          thresholdName: "Yes",
-          thresholdValue: "yes",
-        status: true,
-      },
-      {
-        subDesignId: emporio._id,
-             thresholdName: "No",
-          thresholdValue: "no",
-        status: true,
-      },
-      {
-        subDesignId: luxe._id,
-        thresholdName: "Yes",
-          thresholdValue: "yes",
-        status: true,
-      },
-      {
-        subDesignId: luxe._id,
-           thresholdName: "No",
-          thresholdValue: "no",
-        status: true,
-      },
-      {
-        subDesignId: RP._id,
-          thresholdName: "Yes",
-          thresholdValue: "yes",
-        status: true,
-      },
-      {
-        subDesignId: RP._id,
-             thresholdName: "No",
-          thresholdValue: "no",
-        status: true,
-      },
-      {
-        subDesignId: classic._id,
-         thresholdName: "Yes",
-          thresholdValue: "yes",
-        status: true,
-      },
-      {
-        subDesignId: classic._id,
-           thresholdName: "No",
-          thresholdValue: "no",
-        status: true,
-      }
-    ]);
+    if (!frame) continue;
 
-    console.log("DoorThreshold seed completed");
-  } else {
-    console.log("DoorThreshold already seeded");
+    const frameType = await DoorFrameType.findOne({
+      frameId: frame._id,
+      frameTypeValue: item.frameType,
+    });
+
+    if (!frameType) continue;
+
+    const frameTypeOption = await DoorFrameTypeOption.findOne({
+      frameTypeId: frameType._id,
+      frameTypeOptionValue: item.frameTypeOption,
+    });
+
+    if (!frameTypeOption) continue;
+
+    const docs = item.thresholds.map((threshold) => ({
+      frameTypeOptionId: frameTypeOption._id,
+      thresholdName: threshold.name,
+      thresholdValue: threshold.value,
+      status: true,
+    }));
+
+    await DoorThreshold.insertMany(docs);
   }
+
+  console.log("Door thresholds seed completed");
 };

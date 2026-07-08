@@ -15,5 +15,6 @@ router.use("/door-sub-design", require("./doorSubDesignRoutes"));
 router.use("/door-models", require("./doorModelRoutes"));
 router.use("/door-frame-types", require("./doorFrameTypeRoutes"));
 router.use("/door-frame-type-options", require("./doorFrameTypeOptionsRoutes"));
+router.use("/door-shade", require("./doorShadeRoutes"));
 
 module.exports = router;

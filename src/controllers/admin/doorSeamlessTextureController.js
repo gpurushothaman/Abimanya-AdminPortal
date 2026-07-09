@@ -1,15 +1,15 @@
 const fs = require("fs");
 const path = require("path");
-const DoorShades = require("../../models/admin/DoorShades");
+const DoorSeamlessTexture = require("../../models/admin/DoorSeamlessTexture");
 
-exports.getDoorShades = async (req, res) => {
+exports.getDoorSeamlessTexture = async (req, res) => {
   try {
-    const doorShades = await DoorShades.find().populate("modelId");
+    const doorSeamlessTexture = await DoorSeamlessTexture.find().populate("designRefId");
 
     res.status(200).json({
       success: true,
-      count: doorShades.length,
-      data: doorShades,
+      count: doorSeamlessTexture.length,
+      data: doorSeamlessTexture,
     });
   } catch (error) {
     console.log("ERROR =>", error);
@@ -21,19 +21,17 @@ exports.getDoorShades = async (req, res) => {
   }
 };
 
-exports.createDoorShade = async (req, res) => {
+exports.createDoorSeamlessTexture = async (req, res) => {
   try {
     const createData = { ...req.body };
 
-    const textureFile = req.files?.shadeTexture?.[0];
-    const subDesignValue = createData?.subDesignValue;
-    const modelValue = createData?.modelValue;
+    const textureFile = req.files?.seamlessTexture?.[0];
+    const designValue = createData?.designValue;  
 
-    if (textureFile && subDesignValue && modelValue) {
+    if (textureFile && designValue) {
       const folder = path.join(
-        "src/assets/doors/shades",
-        subDesignValue,
-        modelValue
+        "src/assets/doors/seamless-texture",
+        designValue
       );
 
       fs.mkdirSync(folder, { recursive: true });
@@ -49,7 +47,7 @@ exports.createDoorShade = async (req, res) => {
       createData.textureFileName = textureFile.filename;
     }
 
-    const created = await DoorShades.create(createData);
+    const created = await DoorSeamlessTexture.create(createData);
 
     res.status(201).json({
       success: true,
@@ -63,10 +61,10 @@ exports.createDoorShade = async (req, res) => {
   }
 };
 
-exports.updateDoorShade = async (req, res) => {
+exports.updateDoorSeamlessTexture = async (req, res) => {
   try {
     const updateData = { ...req.body };
-    const updated = await DoorShades.findByIdAndUpdate(
+    const updated = await DoorSeamlessTexture.findByIdAndUpdate(
       req.params.id,
       updateData,
       {
@@ -87,23 +85,22 @@ exports.updateDoorShade = async (req, res) => {
   }
 };
 
-exports.deleteDoorShade = async (req, res) => {
+exports.deleteDoorSeamlessTexture = async (req, res) => {
   try {
-    const { subDesignValue, modelValue } = req.query;
-    const shade = await DoorShades.findById(req.params.id);
+    const { designValue } = req.query;
+    const seamlessTextureData = await DoorSeamlessTexture.findById(req.params.id);
     const folder = path.join(
-      "src/assets/doors/shades",
-      subDesignValue,
-      modelValue
+      "src/assets/doors/seamless-texture",
+      designValue,      
     );
-    const filePath = path.join(folder, shade?.textureFileName);
+    const filePath = path.join(folder, seamlessTextureData?.textureFileName);
     if (filePath) {
       fs.rmSync(filePath, { recursive: true, force: true });
     }
 
-    const deletedDoorShade = await DoorShades.findByIdAndDelete(req.params.id);
+    const deletedDoorSeamlessTexture = await DoorSeamlessTexture.findByIdAndDelete(req.params.id);
 
-    if (!deletedDoorShade) {
+    if (!deletedDoorSeamlessTexture) {
       return res.status(404).json({
         success: false,
         message: "Door shade not found",

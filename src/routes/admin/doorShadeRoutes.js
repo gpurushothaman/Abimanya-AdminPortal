@@ -21,7 +21,6 @@ router.post(
 
 router.put(
   "/:id",
-  upload.fields([{ name: "shadeTexture", maxCount: 1 }]),
   updateDoorShade
 );
 

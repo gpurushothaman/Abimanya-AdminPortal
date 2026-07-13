@@ -4,7 +4,9 @@ const DoorSeamlessTexture = require("../../models/admin/DoorSeamlessTexture");
 
 exports.getDoorSeamlessTexture = async (req, res) => {
   try {
-    const doorSeamlessTexture = await DoorSeamlessTexture.find().populate("designRefId");
+    const doorSeamlessTexture = await DoorSeamlessTexture.find().populate(
+      "designRefId"
+    );
 
     res.status(200).json({
       success: true,
@@ -26,7 +28,7 @@ exports.createDoorSeamlessTexture = async (req, res) => {
     const createData = { ...req.body };
 
     const textureFile = req.files?.seamlessTexture?.[0];
-    const designValue = createData?.designValue;  
+    const designValue = createData?.designValue;
 
     if (textureFile && designValue) {
       const folder = path.join(
@@ -47,12 +49,57 @@ exports.createDoorSeamlessTexture = async (req, res) => {
       createData.textureFileName = textureFile.filename;
     }
 
-    const created = await DoorSeamlessTexture.create(createData);
+    let result;
 
-    res.status(201).json({
-      success: true,
-      data: created,
-    });
+    if (createData.textureId) {
+      if (textureFile) {
+        const seamlessTextureData = await DoorSeamlessTexture.findById(
+          createData.textureId
+        );
+        const folder = path.join(
+          "src/assets/doors/seamless-texture",
+          designValue
+        );
+        const filePath = path.join(
+          folder,
+          seamlessTextureData?.textureFileName
+        );
+        if (filePath) {
+          fs.rmSync(filePath, { recursive: true, force: true });
+        }
+      }
+
+      const textureId = createData?.textureId;
+      delete createData.textureId;
+
+      result = await DoorSeamlessTexture.findByIdAndUpdate(
+        textureId,
+        createData,
+        {
+          returnDocument: "after",
+          runValidators: true,
+        }
+      );
+
+      if (!result) {
+        return res.status(404).json({
+          success: false,
+          message: "Door seamless texture not found.",
+        });
+      }
+
+      return res.status(200).json({
+        success: true,
+        data: result,
+      });
+    } else {
+      result = await DoorSeamlessTexture.create(createData);
+
+      return res.status(201).json({
+        success: true,
+        data: result,
+      });
+    }
   } catch (err) {
     res.status(500).json({
       success: false,
@@ -88,17 +135,17 @@ exports.updateDoorSeamlessTexture = async (req, res) => {
 exports.deleteDoorSeamlessTexture = async (req, res) => {
   try {
     const { designValue } = req.query;
-    const seamlessTextureData = await DoorSeamlessTexture.findById(req.params.id);
-    const folder = path.join(
-      "src/assets/doors/seamless-texture",
-      designValue,      
+    const seamlessTextureData = await DoorSeamlessTexture.findById(
+      req.params.id
     );
+    const folder = path.join("src/assets/doors/seamless-texture", designValue);
     const filePath = path.join(folder, seamlessTextureData?.textureFileName);
     if (filePath) {
       fs.rmSync(filePath, { recursive: true, force: true });
     }
 
-    const deletedDoorSeamlessTexture = await DoorSeamlessTexture.findByIdAndDelete(req.params.id);
+    const deletedDoorSeamlessTexture =
+      await DoorSeamlessTexture.findByIdAndDelete(req.params.id);
 
     if (!deletedDoorSeamlessTexture) {
       return res.status(404).json({

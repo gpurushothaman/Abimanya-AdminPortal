@@ -23,11 +23,15 @@ exports.getDoorShades = async (req, res) => {
 
 exports.createDoorShade = async (req, res) => {
   try {
-    const createData = { ...req.body };
+    let createData = { ...req.body };
 
     const textureFile = req.files?.shadeTexture?.[0];
     const subDesignValue = createData?.subDesignValue;
-    const modelValue = createData?.modelValue;
+    const modelValue = createData?.modelValue;  
+    createData = {
+      ...req.body,
+      doorThicknessBasedCost: JSON.parse(req.body.doorThicknessBasedCost),
+    };
 
     if (textureFile && subDesignValue && modelValue) {
       const folder = path.join(

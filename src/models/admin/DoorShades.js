@@ -26,6 +26,11 @@ const DoorShadesSchema = new mongoose.Schema(
       required: false,
       default: "",
     },
+    doorThicknessBasedCost: {
+      type: Map,
+      of: Number,
+      default: {},
+    },
     status: {
       type: Boolean,
       default: true,

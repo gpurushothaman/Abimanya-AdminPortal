@@ -20,8 +20,9 @@ const DoorShadesSchema = new mongoose.Schema(
       type: String,
       required: false,
       default: "",
-    },
-    seamlessTextureID: {
+    }, 
+    // thiyaguuu name changed
+    seamlessTextureId: {
       type: String,
       required: false,
       default: "",

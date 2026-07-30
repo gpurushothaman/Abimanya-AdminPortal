@@ -18,12 +18,16 @@ router.post(
   upload.fields([{ name: "shadeTexture", maxCount: 1 }]),
   createDoorShade
 );
+    //  Thiyaguuuu --------->>>>>>>>>>
 
 router.put(
   "/:id",
+  upload.fields([{ name: "shadeTexture", maxCount: 1 }]),
   updateDoorShade
 );
 
+
 router.delete("/:id", deleteDoorShade);
+
 
 module.exports = router;

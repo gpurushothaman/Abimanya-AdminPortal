@@ -18,4 +18,6 @@ router.use("/door-frame-type-options", require("./doorFrameTypeOptionsRoutes"));
 router.use("/door-shade", require("./doorShadeRoutes"));
 router.use("/door-seamless-texture", require("./doorSeamlessTextureRoutes"));
 
+router.use("/door-customize-options", require("./doorCustomizeOptionsRoutes"));
+
 module.exports = router;

@@ -10,21 +10,55 @@ exports.getAllDoorCustomizeOptions = async (req, res) => {
     const location = await DoorLocation.find();
     const design = await DoorDesign.find();
     const subDesign = await DoorSubDesign.find();
-    const doorModel = await DoorModel.find();
+
+    const doorModel = await DoorModel.aggregate([
+      {
+        $lookup: {
+          from: "doorseamlesstextures",
+          let: {
+            textureId: {
+              $convert: {
+                input: "$modelSeamlessTextureID",
+                to: "objectId",
+                onError: null,
+                onNull: null,
+              },
+            },
+          },
+          pipeline: [
+            {
+              $match: {
+                $expr: {
+                  $eq: ["$_id", "$$textureId"],
+                },
+              },
+            },
+            {
+              $project: {
+                _id: 1,
+                texturePath: 1,
+              },
+            },
+          ],
+          as: "textureData",
+        },
+      },
+    ]);
+
     const doorShades = await DoorShades.find();
     const doorFrames = await DoorFrame.find();
 
-    const allOptions={
-      location : location,
-      design : design,
-      subDesign : subDesign,
-      models : doorModel, 
-      shades : doorShades,
-      frames : doorFrames
+    const allOptions = {
+      location: location,
+      design: design,
+      subDesign: subDesign,
+      models: doorModel,
+      shades: doorShades,
+      frames: doorFrames,
     };
 
     res.status(200).json({
-      success: true,      
+      success: true,
       data: allOptions,
     });
   } catch (error) {
@@ -34,4 +68,3 @@ exports.getAllDoorCustomizeOptions = async (req, res) => {
     });
   }
 };
-

@@ -12,23 +12,25 @@ const seedDoorModels = require("./models.seed");
 const seedDoorThickness = require("./thickness.seed")
 const seedFrameTypes = require("./frameTypes.seed")
 const seedFrameTypeOptions = require("./frameTypeOptions.seed")
+const seedFrameSections = require("./frameSections.seed")
 
 async function seed() {
   try {
     await mongoose.connect(process.env.MONGO_URI);
 
     const seeders = [
-      seedDimensions,
-      seedDoorThresholds,
-      seedDoorOrientations,
-      seedDoorJambLocations,
-      seedDoorFrames,
-      seedDoorDesigns,
-      seedDoorSubDesigns,
-      seedDoorModels,
-      seedDoorThickness,
-      seedFrameTypes,
-      seedFrameTypeOptions
+      // seedDimensions,
+      // seedDoorThresholds,
+      // seedDoorOrientations,
+      // seedDoorJambLocations,
+      // seedDoorFrames,
+      // seedDoorDesigns,
+      // seedDoorSubDesigns,
+      // seedDoorModels,
+      // seedDoorThickness,
+       //seedFrameTypes,
+      //seedFrameTypeOptions,
+      seedFrameSections
     ];
 
     for (const seeder of seeders) {

@@ -45,7 +45,42 @@ exports.getAllDoorCustomizeOptions = async (req, res) => {
       },
     ]);
 
-    const doorShades = await DoorShades.find();
+
+    const doorShades = await DoorShades.aggregate([
+      {
+        $lookup: {
+          from: "doorseamlesstextures",
+          let: {
+            textureId: {
+              $convert: {
+                input: "$seamlessTextureId",
+                to: "objectId",
+                onError: null,
+                onNull: null,
+              },
+            },
+          },
+          pipeline: [
+            {
+              $match: {
+                $expr: {
+                  $eq: ["$_id", "$$textureId"],
+                },
+              },
+            },
+            {
+              $project: {
+                _id: 1,
+                texturePath: 1,
+              },
+            },
+          ],
+          as: "textureData",
+        },
+      },
+    ]);
+
+
     const doorFrames = await DoorFrame.find();
 
     const allOptions = {

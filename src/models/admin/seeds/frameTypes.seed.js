@@ -16,7 +16,10 @@ module.exports = async function seedDoorFrameTypes() {
       types: [
         { name: "Solid Wood", value: "solidWood" },
         { name: "Laminate Profile Wrapping", value: "laminateProfileWrapping" },
-        { name: "Laminate Profile Wrapping + Wallcase", value: "laminateProfileWrappingWallcase" },
+        {
+          name: "Laminate Profile Wrapping + Wallcase",
+          value: "laminateProfileWrappingWallcase",
+        },
       ],
     },
     {
@@ -24,109 +27,124 @@ module.exports = async function seedDoorFrameTypes() {
       frame: "half",
       types: [
         { name: "Solid Wood", value: "solidWood" },
-        { name: "Laminate Profile Wrapping", value: "laminateProfileWrapping" }
+        { name: "Laminate Profile Wrapping", value: "laminateProfileWrapping" },
       ],
     },
     {
-        subDesign: "flute",
-        frame: "no",
-        types: [],
+      subDesign: "flute",
+      frame: "no",
+      types: [],
     },
-     {
+    {
       subDesign: "elite",
       frame: "full",
       types: [
         { name: "Solid Wood", value: "solidWood" },
         { name: "Laminate Profile Wrapping", value: "laminateProfileWrapping" },
-        { name: "Laminate Profile Wrapping + Wallcase", value: "laminateProfileWrappingWallcase" },
-      ],
-    },
-    {
-      subDesign: "elite",
-      frame: "half",
-      types: [
-        { name: "Solid Wood", value: "solidWood" },
-        { name: "Laminate Profile Wrapping", value: "laminateProfileWrapping" }
-      ],
-    },
-    {
-        subDesign: "elite",
-        frame: "no",
-        types: [],
-    },
-     {
-      subDesign: "platina",
-      frame: "full",
-      types: [
-        { name: "Solid Wood", value: "solidWood" },
-        { name: "Laminate Profile Wrapping", value: "laminateProfileWrapping" },
-        { name: "Laminate Profile Wrapping + Wallcase", value: "laminateProfileWrappingWallcase" },
-      ],
-    },
-    {
-      subDesign: "platina",
-      frame: "half",
-      types: [
-        { name: "Solid Wood", value: "solidWood" },
-        { name: "Laminate Profile Wrapping", value: "laminateProfileWrapping" }
-      ],
-    },
-    {
-        subDesign: "platina",
-        frame: "no",
-        types: [],
-    },
-     {
-      subDesign: "titan",
-      frame: "full",
-      types: [
-        { name: "Solid Wood", value: "solidWood" },
-        { name: "Laminate Profile Wrapping", value: "laminateProfileWrapping" },
-        { name: "Laminate Profile Wrapping + Wallcase", value: "laminateProfileWrappingWallcase" },
-      ],
-    },
-    {
-      subDesign: "titan",
-      frame: "half",
-      types: [
-        { name: "Solid Wood", value: "solidWood" },
-        { name: "Laminate Profile Wrapping", value: "laminateProfileWrapping" }
-      ],
-    },
-    {
-        subDesign: "titan",
-        frame: "no",
-        types: [],
-    },
-    {
-      subDesign: "emporio",
-      frame: "full",
-      types: [
-        { name: "Solid Wood", value: "solidWood" },
-        { name: "Laminate Profile Wrapping", value: "laminateProfileWrapping" },
-        { name: "Laminate Profile Wrapping + Wallcase", value: "laminateProfileWrappingWallcase" },
-      ],
-    },
-    {
-      subDesign: "emporio",
-      frame: "half",
-      types: [
-        { name: "Solid Wood", value: "solidWood" },
-        { name: "Laminate Profile Wrapping", value: "laminateProfileWrapping" }
-      ],
-    },
-    {
-        subDesign: "emporio",
-        frame: "no",
-        types: [],
-    },
         {
+          name: "Laminate Profile Wrapping + Wallcase",
+          value: "laminateProfileWrappingWallcase",
+        },
+      ],
+    },
+    {
+      subDesign: "elite",
+      frame: "half",
+      types: [
+        { name: "Solid Wood", value: "solidWood" },
+        { name: "Laminate Profile Wrapping", value: "laminateProfileWrapping" },
+      ],
+    },
+    {
+      subDesign: "elite",
+      frame: "no",
+      types: [],
+    },
+    {
+      subDesign: "platina",
+      frame: "full",
+      types: [
+        { name: "Solid Wood", value: "solidWood" },
+        { name: "Laminate Profile Wrapping", value: "laminateProfileWrapping" },
+        {
+          name: "Laminate Profile Wrapping + Wallcase",
+          value: "laminateProfileWrappingWallcase",
+        },
+      ],
+    },
+    {
+      subDesign: "platina",
+      frame: "half",
+      types: [
+        { name: "Solid Wood", value: "solidWood" },
+        { name: "Laminate Profile Wrapping", value: "laminateProfileWrapping" },
+      ],
+    },
+    {
+      subDesign: "platina",
+      frame: "no",
+      types: [],
+    },
+    {
+      subDesign: "titan",
+      frame: "full",
+      types: [
+        { name: "Solid Wood", value: "solidWood" },
+        { name: "Laminate Profile Wrapping", value: "laminateProfileWrapping" },
+        {
+          name: "Laminate Profile Wrapping + Wallcase",
+          value: "laminateProfileWrappingWallcase",
+        },
+      ],
+    },
+    {
+      subDesign: "titan",
+      frame: "half",
+      types: [
+        { name: "Solid Wood", value: "solidWood" },
+        { name: "Laminate Profile Wrapping", value: "laminateProfileWrapping" },
+      ],
+    },
+    {
+      subDesign: "titan",
+      frame: "no",
+      types: [],
+    },
+    {
+      subDesign: "emporio",
+      frame: "full",
+      types: [
+        { name: "Solid Wood", value: "solidWood" },
+        { name: "Laminate Profile Wrapping", value: "laminateProfileWrapping" },
+        {
+          name: "Laminate Profile Wrapping + Wallcase",
+          value: "laminateProfileWrappingWallcase",
+        },
+      ],
+    },
+    {
+      subDesign: "emporio",
+      frame: "half",
+      types: [
+        { name: "Solid Wood", value: "solidWood" },
+        { name: "Laminate Profile Wrapping", value: "laminateProfileWrapping" },
+      ],
+    },
+    {
+      subDesign: "emporio",
+      frame: "no",
+      types: [],
+    },
+    {
       subDesign: "luxe",
       frame: "full",
       types: [
         { name: "Solid Wood", value: "solidWood" },
         { name: "Laminate Profile Wrapping", value: "laminateProfileWrapping" },
-        { name: "Laminate Profile Wrapping + Wallcase", value: "laminateProfileWrappingWallcase" },
+        {
+          name: "Laminate Profile Wrapping + Wallcase",
+          value: "laminateProfileWrappingWallcase",
+        },
       ],
     },
     {
@@ -134,21 +152,24 @@ module.exports = async function seedDoorFrameTypes() {
       frame: "half",
       types: [
         { name: "Solid Wood", value: "solidWood" },
-        { name: "Laminate Profile Wrapping", value: "laminateProfileWrapping" }
+        { name: "Laminate Profile Wrapping", value: "laminateProfileWrapping" },
       ],
     },
     {
-        subDesign: "luxe",
-        frame: "no",
-        types: [],
+      subDesign: "luxe",
+      frame: "no",
+      types: [],
     },
-      {
+    {
       subDesign: "RP",
       frame: "full",
       types: [
         { name: "Solid Wood", value: "solidWood" },
         { name: "Laminate Profile Wrapping", value: "laminateProfileWrapping" },
-        { name: "Laminate Profile Wrapping + Wallcase", value: "laminateProfileWrappingWallcase" },
+        {
+          name: "Laminate Profile Wrapping + Wallcase",
+          value: "laminateProfileWrappingWallcase",
+        },
       ],
     },
     {
@@ -156,21 +177,24 @@ module.exports = async function seedDoorFrameTypes() {
       frame: "half",
       types: [
         { name: "Solid Wood", value: "solidWood" },
-        { name: "Laminate Profile Wrapping", value: "laminateProfileWrapping" }
+        { name: "Laminate Profile Wrapping", value: "laminateProfileWrapping" },
       ],
     },
     {
-        subDesign: "RP",
-        frame: "no",
-        types: [],
+      subDesign: "RP",
+      frame: "no",
+      types: [],
     },
-     {
+    {
       subDesign: "classic",
       frame: "full",
       types: [
         { name: "Solid Wood", value: "solidWood" },
         { name: "Laminate Profile Wrapping", value: "laminateProfileWrapping" },
-        { name: "Laminate Profile Wrapping + Wallcase", value: "laminateProfileWrappingWallcase" },
+        {
+          name: "Laminate Profile Wrapping + Wallcase",
+          value: "laminateProfileWrappingWallcase",
+        },
       ],
     },
     {
@@ -178,38 +202,15 @@ module.exports = async function seedDoorFrameTypes() {
       frame: "half",
       types: [
         { name: "Solid Wood", value: "solidWood" },
-        { name: "Laminate Profile Wrapping", value: "laminateProfileWrapping" }
+        { name: "Laminate Profile Wrapping", value: "laminateProfileWrapping" },
       ],
     },
     {
-        subDesign: "classic",
-        frame: "no",
-        types: [],
+      subDesign: "classic",
+      frame: "no",
+      types: [],
     },
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   ];
-
 
   if (!exists) {
     const documents = [];
@@ -218,12 +219,12 @@ module.exports = async function seedDoorFrameTypes() {
       const subDesign = await DoorSubDesign.findOne({
         subDesignValue: item.subDesign,
       });
-    
+
       const frame = await DoorFrame.findOne({
         subDesignId: subDesign._id,
         frameValue: item.frame,
       });
-    
+
       item.types.forEach((type) => {
         documents.push({
           frameId: frame._id,
@@ -233,7 +234,7 @@ module.exports = async function seedDoorFrameTypes() {
         });
       });
     }
-    
+
     await DoorFrameType.insertMany(documents);
     console.log("Door frame type seed completed");
   } else {

@@ -32,7 +32,7 @@ module.exports = async function seedDoorFrameTypeOptions() {
         { name: "Steambeech", value: "Steambeech" },
       ],
     },
-      {
+    {
       subDesign: "platina",
       frame: "full",
       frameType: "solidWood",
@@ -42,7 +42,7 @@ module.exports = async function seedDoorFrameTypeOptions() {
         { name: "Steambeech", value: "Steambeech" },
       ],
     },
-      {
+    {
       subDesign: "titan",
       frame: "full",
       frameType: "solidWood",
@@ -73,7 +73,7 @@ module.exports = async function seedDoorFrameTypeOptions() {
         { name: "Steambeech", value: "Steambeech" },
       ],
     },
-      {
+    {
       subDesign: "platina",
       frame: "half",
       frameType: "solidWood",
@@ -83,7 +83,7 @@ module.exports = async function seedDoorFrameTypeOptions() {
         { name: "Steambeech", value: "Steambeech" },
       ],
     },
-      {
+    {
       subDesign: "titan",
       frame: "half",
       frameType: "solidWood",
@@ -94,9 +94,8 @@ module.exports = async function seedDoorFrameTypeOptions() {
       ],
     },
 
-
     // veneer full
-     {
+    {
       subDesign: "emporio",
       frame: "full",
       frameType: "solidWood",
@@ -116,9 +115,9 @@ module.exports = async function seedDoorFrameTypeOptions() {
         { name: "Steambeech", value: "Steambeech" },
       ],
     },
-      
+
     //  venner half
-         {
+    {
       subDesign: "emporio",
       frame: "half",
       frameType: "solidWood",
@@ -138,10 +137,10 @@ module.exports = async function seedDoorFrameTypeOptions() {
         { name: "Steambeech", value: "Steambeech" },
       ],
     },
-    
+
     // royal paint full
 
-           {
+    {
       subDesign: "RP",
       frame: "full",
       frameType: "solidWood",
@@ -152,7 +151,7 @@ module.exports = async function seedDoorFrameTypeOptions() {
       ],
     },
     // royal paint half
-          {
+    {
       subDesign: "RP",
       frame: "half",
       frameType: "solidWood",
@@ -162,9 +161,9 @@ module.exports = async function seedDoorFrameTypeOptions() {
         { name: "Steambeech", value: "Steambeech" },
       ],
     },
-      // skin classic full
+    // skin classic full
 
-           {
+    {
       subDesign: "classic",
       frame: "full",
       frameType: "solidWood",
@@ -175,7 +174,7 @@ module.exports = async function seedDoorFrameTypeOptions() {
       ],
     },
     // skin classic half
-          {
+    {
       subDesign: "classic",
       frame: "half",
       frameType: "solidWood",
@@ -185,8 +184,6 @@ module.exports = async function seedDoorFrameTypeOptions() {
         { name: "Steambeech", value: "Steambeech" },
       ],
     },
-      
-
   ];
 
   if (!exists) {

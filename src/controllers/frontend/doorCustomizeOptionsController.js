@@ -4,6 +4,9 @@ const DoorSubDesign = require("../../models/admin/DoorSubDesign");
 const DoorModel = require("../../models/admin/DoorModel");
 const DoorShades = require("../../models/admin/DoorShades");
 const DoorFrame = require("../../models/admin/DoorFrame");
+const DoorFrameType = require("../../models/admin/DoorFrameType");
+const DoorFrameTypeOption = require("../../models/admin/DoorFrameTypeOption");
+const DoorFrameSection = require("../../models/admin/DoorFrameSection");
 
 exports.getAllDoorCustomizeOptions = async (req, res) => {
   try {
@@ -82,6 +85,9 @@ exports.getAllDoorCustomizeOptions = async (req, res) => {
 
 
     const doorFrames = await DoorFrame.find();
+    const DoorFrameTypes = await DoorFrameType.find();
+    const DoorFrameTypeOptions = await DoorFrameTypeOption.find();
+    const DoorFrameSections = await DoorFrameSection.find();
 
     const allOptions = {
       location: location,
@@ -90,6 +96,9 @@ exports.getAllDoorCustomizeOptions = async (req, res) => {
       models: doorModel,
       shades: doorShades,
       frames: doorFrames,
+      frameTypes : DoorFrameTypes,
+      frameTypeOptions : DoorFrameTypeOptions,
+      frameSections : DoorFrameSections,
     };
 
     res.status(200).json({

@@ -8,7 +8,7 @@ const doorThicknessSchema = new mongoose.Schema(
            required: true,
          },
     DoorThicknessName: {type: String,required: true,},
-    DoorThicknessValue: {type: Number,required: true, },
+    DoorThicknessValue: {type: String,required: true, },
     status: { type: Boolean, default: true },
   },
   {

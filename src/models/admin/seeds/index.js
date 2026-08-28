@@ -27,10 +27,10 @@ async function seed() {
       // seedDoorDesigns,
       // seedDoorSubDesigns,
       // seedDoorModels,
-      // seedDoorThickness,
+       seedDoorThickness,
        //seedFrameTypes,
       //seedFrameTypeOptions,
-      seedFrameSections
+      //seedFrameSections
     ];
 
     for (const seeder of seeders) {

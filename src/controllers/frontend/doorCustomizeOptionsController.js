@@ -7,6 +7,7 @@ const DoorFrame = require("../../models/admin/DoorFrame");
 const DoorFrameType = require("../../models/admin/DoorFrameType");
 const DoorFrameTypeOption = require("../../models/admin/DoorFrameTypeOption");
 const DoorFrameSection = require("../../models/admin/DoorFrameSection");
+const DoorThreshold = require("../../models/admin/DoorThreshold");
 
 exports.getAllDoorCustomizeOptions = async (req, res) => {
   try {
@@ -88,6 +89,7 @@ exports.getAllDoorCustomizeOptions = async (req, res) => {
     const DoorFrameTypes = await DoorFrameType.find();
     const DoorFrameTypeOptions = await DoorFrameTypeOption.find();
     const DoorFrameSections = await DoorFrameSection.find();
+    const DoorThresholds = await DoorThreshold.find();
 
     const allOptions = {
       location: location,
@@ -99,6 +101,7 @@ exports.getAllDoorCustomizeOptions = async (req, res) => {
       frameTypes : DoorFrameTypes,
       frameTypeOptions : DoorFrameTypeOptions,
       frameSections : DoorFrameSections,
+      DoorThresholds : DoorThresholds
     };
 
     res.status(200).json({

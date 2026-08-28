@@ -34,7 +34,7 @@ exports.getAllDoorFrameSections = async (req, res) => {
       ),
 
       DoorFrameSection.find().select(
-        "_id frameTypeOptionId sectionName sectionValue status"
+        "_id frameTypeOptionId frameSectionName frameSectionValue status"
       ),
     ]);
 

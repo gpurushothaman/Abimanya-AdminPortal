@@ -9,6 +9,9 @@ const DoorFrameTypeOption = require("../../models/admin/DoorFrameTypeOption");
 const DoorFrameSection = require("../../models/admin/DoorFrameSection");
 const DoorThreshold = require("../../models/admin/DoorThreshold");
 const DoorThickness = require("../../models/admin/DoorThickness");
+const DoorJambLocation = require("../../models/admin/DoorJambLocation");
+const DoorOrientation = require("../../models/admin/DoorOrientation");
+const DoorArchitrave = require("../../models/admin/DoorArchitrave");
 
 exports.getAllDoorCustomizeOptions = async (req, res) => {
   try {
@@ -92,6 +95,9 @@ exports.getAllDoorCustomizeOptions = async (req, res) => {
     const DoorFrameSections = await DoorFrameSection.find();
     const DoorThresholds = await DoorThreshold.find();
     const DoorThicknessData = await DoorThickness.find();
+    const DoorJambLocationData = await DoorJambLocation.find();
+    const DoorOrientationData = await DoorOrientation.find();
+    const DoorArchitraveData = await DoorArchitrave.find();
 
     const allOptions = {
       location: location,
@@ -105,6 +111,9 @@ exports.getAllDoorCustomizeOptions = async (req, res) => {
       frameSections : DoorFrameSections,
       doorThresholds : DoorThresholds,
       doorThicknessDatas : DoorThicknessData,
+      doorJambLocationDatas : DoorJambLocationData,
+      doorOrientationDatas : DoorOrientationData,
+      doorArchitraveDatas : DoorArchitraveData,
     };
 
     res.status(200).json({

@@ -44,6 +44,36 @@ const DoorModelSchema = new mongoose.Schema(
       required: false,
       default: "",
     },
+    modelRoughnessMapTexturePath:{
+      type: String,
+      required: false,
+      default: "",
+    },
+    modelRoughnessMapTextureFileName:{
+      type: String,
+      required: false,
+      default: "",
+    },
+    modelRoughnessMapTextureThumbnailPath:{
+      type: String,
+      required: false,
+      default: "",
+    },
+    modelNormalMapTexturePath:{
+      type: String,
+      required: false,
+      default: "",
+    },
+    modelNormalMapTextureFileName:{
+      type: String,
+      required: false,
+      default: "",
+    },
+    modelNormalMapTextureThumbnailPath:{
+      type: String,
+      required: false,
+      default: "",
+    },
     modelSeamlessTextureID:{
       type: String,
       required: false,

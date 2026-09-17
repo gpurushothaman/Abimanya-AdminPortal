@@ -16,6 +16,8 @@ router.put(
   upload.fields([
     { name: "modelFile", maxCount: 1 },
     { name: "mainTexture", maxCount: 1 },
+    { name: "roughnessMapTexture", maxCount: 1 },
+    { name: "normalMapTexture", maxCount: 1 },
   ]),
   updateDoorModel
 );

@@ -30,6 +30,9 @@ exports.updateDoorModel = async (req, res) => {
     const subDesignValue = updateData?.subDesignValue;
     const modelValue = updateData?.modelValue;
 
+    const roughnessMapTexture = req.files?.roughnessMapTexture?.[0];
+    const normalMapTexture = req.files?.normalMapTexture?.[0];
+
     if (modelFile && subDesignValue && modelValue) {
       const folder = path.join(
         "src/assets/doors/models",
@@ -78,6 +81,59 @@ exports.updateDoorModel = async (req, res) => {
       updateData.modelMainTexturePath = destination.replace(/\\/g, "/").replace(/^src\//, "");
       updateData.modelMainTextureFileName = textureFile.filename;
     }
+
+
+    if (roughnessMapTexture && subDesignValue && modelValue) {
+      const folder = path.join(       
+        "src/assets/doors/textures",
+        subDesignValue,
+        modelValue,
+        "roughness_map"
+      );
+
+      if (fs.existsSync(folder)) {
+        fs.readdirSync(folder).forEach((file) => {
+          const filePath = path.join(folder, file);
+          fs.rmSync(filePath, { recursive: true, force: true });
+        });
+      } else {
+        fs.mkdirSync(folder, { recursive: true });
+      }
+
+      const destination = path.join(folder, roughnessMapTexture.filename);
+
+      fs.renameSync(roughnessMapTexture.path, destination);
+
+      updateData.modelRoughnessMapTexturePath = destination.replace(/\\/g, "/").replace(/^src\//, "");
+      updateData.modelRoughnessMapTextureFileName = roughnessMapTexture.filename;
+    }
+
+    if (normalMapTexture && subDesignValue && modelValue) {
+      const folder = path.join(       
+        "src/assets/doors/textures",
+        subDesignValue,
+        modelValue,
+        "normal_map"
+      );
+
+      if (fs.existsSync(folder)) {
+        fs.readdirSync(folder).forEach((file) => {
+          const filePath = path.join(folder, file);
+          fs.rmSync(filePath, { recursive: true, force: true });
+        });
+      } else {
+        fs.mkdirSync(folder, { recursive: true });
+      }
+
+      const destination = path.join(folder, normalMapTexture.filename);
+
+      fs.renameSync(normalMapTexture.path, destination);
+
+      updateData.modelNormalMapTexturePath = destination.replace(/\\/g, "/").replace(/^src\//, "");
+      updateData.modelNormalMapTextureFileName = normalMapTexture.filename;
+    }
+
+
 
     const updated = await DoorModel.findByIdAndUpdate(
       req.params.id,
